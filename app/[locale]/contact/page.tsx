@@ -37,8 +37,9 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="section-space rule">
-        <div className="site-container contact-layout">
-          <div>
+        <div className="site-container">
+          <div className="contact-layout">
+            <div>
             <figure className="contact-place-photo" data-tilt><Image src="/hy-garden/coffee-workspace.jpg" alt={locale === "en" ? "Hy Garden coffee workspace" : locale === "zh" ? "Hỷ Garden 咖啡工作空间" : "Không gian coffee workspace Hỷ Garden"} width={1448} height={1086} unoptimized /></figure>
             <h2>{t.contactPage.details}</h2>
             <address className="contact-details">
@@ -53,14 +54,15 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               <a className="text-link maps-link" href={mapsUrl} target="_blank" rel="noreferrer">{t.contactPage.map} <span aria-hidden="true">↗</span></a>
             </address>
           </div>
-          <div>
-            <h2>{t.contactPage.formTitle}</h2>
-            <p className="form-intro">{t.contactPage.formIntro}</p>
-            <ContactForm locale={locale} />
+            <div>
+              <h2>{t.contactPage.formTitle}</h2>
+              <p className="form-intro">{t.contactPage.formIntro}</p>
+              <ContactForm locale={locale} />
+            </div>
           </div>
-        </div>
-        <div className="contact-map">
-          <iframe title={t.contactPage.map} src={mapsEmbedUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+          <div className="contact-map">
+            <iframe title={t.contactPage.map} src={mapsEmbedUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+          </div>
         </div>
       </section>
     </>
