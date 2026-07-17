@@ -26,7 +26,7 @@ export function CompanyDetails({ locale, compact = false }: { locale: Locale; co
         </div>
       ))}
       {company.showPhone && (
-        <div className="company-row"><dt>{t.labels.phone}</dt><dd><a href={company.phoneHref}>{company.phoneInternational}</a></dd></div>
+        <div className="company-row"><dt>{t.labels.phone}</dt><dd><a href={company.phoneHref}>{locale === "vi" ? company.phoneDisplay : company.phoneInternational}</a></dd></div>
       )}
       <div className="company-row"><dt>{t.labels.email}</dt><dd><a href={`mailto:${company.email}`}>{company.email}</a></dd></div>
       <div className="company-row"><dt>{t.labels.website}</dt><dd><a href={company.website}>trieuhymedia.net</a></dd></div>

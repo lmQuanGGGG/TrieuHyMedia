@@ -33,7 +33,7 @@ export function Footer({ locale }: { locale: Locale }) {
           </div>
           <address>
             <p>{locale === "en" ? company.addressEn : company.addressVi}</p>
-            {company.showPhone && <a href={company.phoneHref}>{company.phoneInternational}</a>}
+            {company.showPhone && <a href={company.phoneHref}>{locale === "vi" ? company.phoneDisplay : company.phoneInternational}</a>}
             <a href={`mailto:${company.email}`}>{company.email}</a>
           </address>
         </div>

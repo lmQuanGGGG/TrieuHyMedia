@@ -44,7 +44,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               <span>{t.labels.businessId}: {company.businessId}</span>
               <span>{t.labels.representative}: {locale === "en" ? company.representativeEn : company.representativeVi} — {company.representativeTitle}</span>
               <span>{locale === "en" ? company.addressEn : company.addressVi}</span>
-              <a href={company.phoneHref}>{company.phoneInternational}</a>
+              <a href={company.phoneHref}>{locale === "vi" ? company.phoneDisplay : company.phoneInternational}</a>
               <a href={`mailto:${company.email}`}>{company.email}</a>
               <a href={company.website}>{company.website}</a>
               <a className="text-link maps-link" href={mapsUrl} target="_blank" rel="noreferrer">{t.contactPage.map} <span aria-hidden="true">↗</span></a>
