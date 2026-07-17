@@ -25,8 +25,9 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const locale: Locale = rawLocale;
   const t = getContent(locale);
   const mapsQuery = "77 Thanh Lương 8, Phường Hòa Xuân, Thành phố Đà Nẵng, Việt Nam";
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
-  const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(mapsQuery)}&output=embed`;
+  const mapsLanguage = locale === "zh" ? "zh-CN" : locale;
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}&hl=${mapsLanguage}`;
+  const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(mapsQuery)}&output=embed&hl=${mapsLanguage}`;
   return (
     <>
       <section className="page-hero page-hero--visual">
@@ -51,15 +52,15 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               <a href={company.website}>{company.website}</a>
               <a className="text-link maps-link" href={mapsUrl} target="_blank" rel="noreferrer">{t.contactPage.map} <span aria-hidden="true">↗</span></a>
             </address>
-            <div className="contact-map">
-              <iframe title={t.contactPage.map} src={mapsEmbedUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
-            </div>
           </div>
           <div>
             <h2>{t.contactPage.formTitle}</h2>
             <p className="form-intro">{t.contactPage.formIntro}</p>
             <ContactForm locale={locale} />
           </div>
+        </div>
+        <div className="contact-map">
+          <iframe title={t.contactPage.map} src={mapsEmbedUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
         </div>
       </section>
     </>

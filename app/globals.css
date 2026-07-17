@@ -1103,8 +1103,8 @@ details p {
 }
 
 .contact-map {
-  height: 290px;
-  margin-top: 38px;
+  height: clamp(330px, 34vw, 460px);
+  margin-top: clamp(52px, 7vw, 96px);
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--surface);
