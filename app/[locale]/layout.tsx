@@ -39,7 +39,7 @@ export default async function LocaleLayout({
     taxID: company.businessId,
     foundingDate: company.registrationDateIso,
     description: "Legally registered advertising company based in Da Nang, Vietnam.",
-    logo: `${company.website}/logos/IMG_4047.jpg`,
+    logo: `${company.website}/logos/logo1.png`,
     areaServed: ["Da Nang", "Vietnam"],
     address: {
       "@type": "PostalAddress",

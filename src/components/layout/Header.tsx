@@ -53,8 +53,7 @@ export function Header({ locale, nav }: Props) {
     <header className={`site-header site-header--solid ${scrolled || open ? "site-header--solid" : ""}`}>
       <div className="site-container header-inner">
         <Link href={`/${locale}`} className="brand-lockup" aria-label={`TRIEU HY MEDIA — ${nav.home}`}>
-          <Image className="brand-logo-symbol" src="/logos/trieu-hy-media-symbol.png" alt="" width={483} height={473} priority unoptimized />
-          <Image className="brand-logo-wordmark" src="/logos/trieu-hy-media-wordmark.png" alt="TRIỆU HỶ MEDIA" width={847} height={179} priority unoptimized />
+          <Image className="brand-logo-full" src="/logos/logo1.png" alt="TRIỆU HỶ MEDIA" width={1677} height={938} priority unoptimized />
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {links.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
