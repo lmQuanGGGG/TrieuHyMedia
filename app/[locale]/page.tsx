@@ -12,10 +12,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMetadata(
     locale,
     "",
-    locale === "en" ? "TRIEU HY MEDIA | Advertising Company in Da Nang" : "TRIEU HY MEDIA | Công ty quảng cáo tại Đà Nẵng",
+    locale === "en" ? "TRIEU HY MEDIA | Advertising Company in Da Nang" : locale === "zh" ? "TRIEU HY MEDIA | 岘港广告公司" : "TRIEU HY MEDIA | Công ty quảng cáo tại Đà Nẵng",
     locale === "en"
       ? "TRIEU HY MEDIA is an advertising company in Da Nang, Vietnam, providing brand communication, digital product and workspace operations."
-      : "TRIEU HY MEDIA là công ty quảng cáo tại Đà Nẵng, cung cấp giải pháp truyền thông thương hiệu, sản phẩm số và vận hành không gian làm việc.",
+      : locale === "zh" ? "TRIEU HY MEDIA 是一家位于越南岘港的广告公司，提供品牌传播、数字产品与工作空间运营服务。" : "TRIEU HY MEDIA là công ty quảng cáo tại Đà Nẵng, cung cấp giải pháp truyền thông thương hiệu, sản phẩm số và vận hành không gian làm việc.",
   );
 }
 
@@ -35,7 +35,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="hero-copy">
             <span className="eyebrow">{t.home.eyebrow}</span>
             <h1 className="display-title">
-              {locale === "vi" ? <>Giải pháp quảng cáo<br />được xây dựng từ<br />sự rõ ràng</> : t.home.headline}
+              {locale === "vi" ? <>Giải pháp quảng cáo<br />được xây dựng từ<br />sự rõ ràng</> : locale === "zh" ? <>以清晰思路<br />打造创意广告</> : t.home.headline}
             </h1>
             <p className="hero-intro body-large">{t.home.intro}</p>
             <div className="hero-actions">

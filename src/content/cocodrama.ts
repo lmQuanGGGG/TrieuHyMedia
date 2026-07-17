@@ -53,6 +53,32 @@ export const cocodramaContent = {
     cta: "Liên hệ TRIEU HY MEDIA",
     imageLabels: ["Trải nghiệm khám phá nội dung CocoDrama", "Đề xuất phim trên ứng dụng CocoDrama", "Bảng xếp hạng phim ngắn phổ biến", "Thiết lập trình phát và tùy chọn xem"],
   },
+  zh: {
+    eyebrow: "TRIEU HY MEDIA 的数字产品",
+    title: "为东南亚本地化的短剧故事",
+    intro: "CocoDrama 是一款短剧流媒体应用，采用来自中国的正版影视内容，并为越南、泰国、印度尼西亚和马来西亚的观众进行本地化。",
+    heroFacts: ["四个市场", "五种语言", "前 15 集免费"],
+    overviewTitle: "灵活的短剧体验",
+    overview: "CocoDrama 为东南亚现代生活节奏带来情感丰富、节奏明快的短剧。每集约三分钟，仍包含高潮、转折、意外反转与连贯的故事线。内容围绕亚洲文化中亲切的主题展开，包括爱情、家庭、事业、身份秘密、成长旅程以及克服逆境。借助数字技术与人工智能，CocoDrama 支持内容创作、语言本地化、字幕优化和个性化观看体验。每一段娱乐时光不仅帮助用户放松，也为日常生活带来情感与灵感。",
+    accessTitle: "观看方式",
+    accessItems: [
+      ["免费开始", "支持内容的前 15 集可免费观看。"],
+      ["订阅套餐", "观众可选择周、月或年套餐，无需依赖广告解锁即可继续观看。"],
+      ["观看广告", "未订阅的观众完成所需广告后，可解锁支持的付费剧集。"],
+    ],
+    localizationTitle: "服务四个本地市场",
+    localizationIntro: "正版内容通过语言本地化与因地制宜的发行方式，为区域观众做好准备。",
+    languages: ["越南语", "泰语", "印尼语", "马来语", "英语"],
+    markets: ["越南", "泰国", "印度尼西亚", "马来西亚"],
+    productTitle: "产品体验",
+    productIntro: "CocoDrama 提供内容发现、排行榜与推荐、竖屏观看体验，以及专为短剧集内容设计的播放控制功能。",
+    paymentsTitle: "套餐与支付连接",
+    payments: "支持周、月和年套餐，并可在适用情况下通过 Apple Pay、Google Pay 及已集成的第三方支付服务完成支付。",
+    paymentNote: "支付方式、内容访问权限和广告可用性可能因市场、平台和发行政策而异。",
+    ctaTitle: "洽谈 CocoDrama 与数字内容合作",
+    cta: "联系 TRIEU HY MEDIA",
+    imageLabels: ["CocoDrama 内容发现体验", "CocoDrama 移动端推荐", "热门短剧排行榜", "播放器设置与观看控制"],
+  },
 } as const satisfies Record<Locale, object>;
 
 export function getCocodramaContent(locale: Locale) {

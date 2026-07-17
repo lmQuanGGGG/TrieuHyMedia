@@ -12,10 +12,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMetadata(
     locale,
     "/contact",
-    locale === "en" ? `Contact | ${company.legalNameEn}` : `Liên hệ | ${company.legalNameVi}`,
+    locale === "en" ? `Contact | ${company.legalNameEn}` : locale === "zh" ? `联系我们 | ${company.legalNameEn}` : `Liên hệ | ${company.legalNameVi}`,
     locale === "en"
       ? "Contact TRIEU HY MEDIA in Da Nang for advertising, brand communication, CocoDrama and Hy Garden workspace inquiries."
-      : "Liên hệ TRIEU HY MEDIA tại Đà Nẵng về quảng cáo, truyền thông thương hiệu, CocoDrama và Hỷ Garden.",
+      : locale === "zh" ? "联系位于岘港的 TRIEU HY MEDIA，咨询广告、品牌传播、CocoDrama 和 Hỷ Garden 工作空间。" : "Liên hệ TRIEU HY MEDIA tại Đà Nẵng về quảng cáo, truyền thông thương hiệu, CocoDrama và Hỷ Garden.",
   );
 }
 
@@ -30,20 +30,20 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       <section className="page-hero page-hero--visual">
         <div className="site-container page-hero-grid">
           <div><span className="eyebrow">{t.contactPage.eyebrow}</span><h1 className="page-title">{t.contactPage.title}</h1><p className="body-large page-intro">{t.contactPage.intro}</p></div>
-          <figure className="page-hero-media" data-tilt><Image src="/hy-garden/front-yard.jpg" alt={locale === "en" ? "Hy Garden front yard and working environment" : "Khu sân trước và không gian làm việc Hỷ Garden"} width={1448} height={1086} priority unoptimized /></figure>
+          <figure className="page-hero-media" data-tilt><Image src="/hy-garden/front-yard.jpg" alt={locale === "en" ? "Hy Garden front yard and working environment" : locale === "zh" ? "Hỷ Garden 前院与工作环境" : "Khu sân trước và không gian làm việc Hỷ Garden"} width={1448} height={1086} priority unoptimized /></figure>
         </div>
       </section>
       <section className="section-space rule">
         <div className="site-container contact-layout">
           <div>
-            <figure className="contact-place-photo" data-tilt><Image src="/hy-garden/coffee-workspace.jpg" alt={locale === "en" ? "Hy Garden coffee workspace" : "Không gian coffee workspace Hỷ Garden"} width={1448} height={1086} unoptimized /></figure>
+            <figure className="contact-place-photo" data-tilt><Image src="/hy-garden/coffee-workspace.jpg" alt={locale === "en" ? "Hy Garden coffee workspace" : locale === "zh" ? "Hỷ Garden 咖啡工作空间" : "Không gian coffee workspace Hỷ Garden"} width={1448} height={1086} unoptimized /></figure>
             <h2>{t.contactPage.details}</h2>
             <address className="contact-details">
               <strong>{company.legalNameEn}</strong>
               <span>{company.legalNameVi}</span>
               <span>{t.labels.businessId}: {company.businessId}</span>
-              <span>{t.labels.representative}: {locale === "en" ? company.representativeEn : company.representativeVi} — {company.representativeTitle}</span>
-              <span>{locale === "en" ? company.addressEn : company.addressVi}</span>
+              <span>{t.labels.representative}: {locale === "vi" ? company.representativeVi : company.representativeEn} — {company.representativeTitle}</span>
+              <span>{locale === "vi" ? company.addressVi : company.addressEn}</span>
               <a href={company.phoneHref}>{locale === "vi" ? company.phoneDisplay : company.phoneInternational}</a>
               <a href={`mailto:${company.email}`}>{company.email}</a>
               <a href={company.website}>{company.website}</a>

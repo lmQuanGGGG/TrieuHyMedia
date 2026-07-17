@@ -28,11 +28,11 @@ export function Footer({ locale }: { locale: Locale }) {
           </div>
           <div>
             <p className="footer-heading">{t.footer.legal}</p>
-            <Link href={`/${locale}/privacy-policy`}>{locale === "en" ? "Privacy Policy" : "Chính sách bảo mật"}</Link>
-            <Link href={`/${locale}/terms-of-use`}>{locale === "en" ? "Terms of Use" : "Điều khoản sử dụng"}</Link>
+            <Link href={`/${locale}/privacy-policy`}>{locale === "en" ? "Privacy Policy" : locale === "zh" ? "隐私政策" : "Chính sách bảo mật"}</Link>
+            <Link href={`/${locale}/terms-of-use`}>{locale === "en" ? "Terms of Use" : locale === "zh" ? "使用条款" : "Điều khoản sử dụng"}</Link>
           </div>
           <address>
-            <p>{locale === "en" ? company.addressEn : company.addressVi}</p>
+            <p>{locale === "vi" ? company.addressVi : company.addressEn}</p>
             {company.showPhone && <a href={company.phoneHref}>{locale === "vi" ? company.phoneDisplay : company.phoneInternational}</a>}
             <a href={`mailto:${company.email}`}>{company.email}</a>
           </address>

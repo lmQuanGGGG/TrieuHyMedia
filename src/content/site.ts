@@ -1,6 +1,6 @@
 import { company } from "@/src/config/company";
 
-export const locales = ["en", "vi"] as const;
+export const locales = ["en", "vi", "zh"] as const;
 export type Locale = (typeof locales)[number];
 
 export function isLocale(value: string): value is Locale {
@@ -45,6 +45,133 @@ const shared = {
       email: "Email",
       website: "Website",
     },
+  },
+  zh: {
+    nav: { home: "首页", about: "关于我们", services: "业务服务", cocodrama: "CocoDrama", contact: "联系我们", contactUs: "联系我们", menu: "菜单", close: "关闭" },
+    footer: { company: "公司", legal: "法律信息", rights: "版权所有。" },
+    labels: {
+      legalName: "法定名称",
+      legalNameVi: "越南语法定名称",
+      shortName: "简称",
+      businessId: "企业编号 / 税号",
+      registrationDate: "注册日期",
+      status: "经营状态",
+      companyType: "企业类型",
+      activity: "主营业务",
+      representative: "法定代表人",
+      address: "地址",
+      phone: "电话",
+      email: "电子邮箱",
+      website: "网站",
+    },
+  },
+} as const;
+
+const zhContent = {
+  ...shared.zh,
+  home: {
+    eyebrow: "企业官方网站",
+    headline: "以清晰思路打造创意广告",
+    intro: `${company.legalNameEn} 是一家位于越南岘港、依法注册的广告公司。我们通过清晰的传播策略、创意内容与务实的广告解决方案，为企业提供支持。`,
+    explore: "探索我们的服务",
+    overviewTitle: "了解 TRIEU HY MEDIA",
+    overview: `${company.legalNameEn} 于 ${company.registrationDateEn} 注册成立，总部位于越南岘港市和春坊。公司专注广告业务，坚持清晰、负责与专业的服务方式。`,
+    overviewDetail: "我们的工作环境融合公司办公室、Hỷ Garden 咖啡工作空间，以及 CocoDrama 等数字产品的开发。这一环境支持专注工作、创意交流与务实执行。",
+    overviewImage: "TRIEU HY MEDIA 办公空间",
+    learnMore: "了解更多",
+    hyGarden: {
+      eyebrow: "我们的工作环境",
+      title: "Hỷ Garden — 办公室与咖啡空间",
+      description: "Hỷ Garden 将 TRIEU HY MEDIA 的办公室和咖啡店融于同一空间。这里服务于公司的日常工作，也提供适合专注工作、团队交流和咖啡会谈的区域。",
+      note: "一个让工作、沟通和日常连接自然发生的实用空间。",
+      labels: ["TRIEU HY MEDIA 办公室", "咖啡工作空间", "花园环境", "楼上工作空间"],
+    },
+    cocodrama: {
+      eyebrow: "数字产品",
+      title: "CocoDrama 将本地化短剧带到四个东南亚市场",
+      description: "正版影视内容、五种本地化语言，以及通过订阅或广告解锁剧集的灵活观看方式。",
+      cta: "探索 CocoDrama",
+    },
+    servicesTitle: "广告与传播服务",
+    servicesIntro: "为需要清晰方向、一致沟通与务实创意执行的企业提供聚焦支持。",
+    approachTitle: "我们的工作方式",
+    approach: [
+      ["了解", "从倾听企业背景、目标与传播需求开始。"],
+      ["规划", "明确务实的方向、优先事项和工作范围。"],
+      ["创作", "根据共识方向开发传播内容与素材。"],
+      ["交付", "谨慎协调交付，并清晰同步进度。"],
+      ["复盘", "评估成果并收集反馈，进行适当优化。"],
+    ],
+    principlesTitle: "工作原则",
+    principles: ["清晰", "责任", "一致", "创意", "专业"],
+    companyTitle: "企业信息",
+    ctaTitle: "让传播更清晰",
+    ctaText: "欢迎联系 TRIEU HY MEDIA，咨询广告与企业传播需求。",
+    cta: "联系我们的团队",
+  },
+  about: {
+    eyebrow: "关于公司",
+    title: "以清晰与责任开展企业传播",
+    intro: `${company.legalNameEn} 是一家依法注册、总部位于越南岘港市的越南企业。公司于 ${company.registrationDateEn} 注册，企业编号为 ${company.businessId}。`,
+    sections: [
+      ["合法设立", "公司为非国有有限责任公司，当前处于正常经营状态，注册地址位于越南岘港市和春坊。"],
+      ["主营业务", "公司的注册主营业务是广告，为企业提供务实的广告与传播支持。"],
+      ["使命", "通过务实的广告与传播解决方案，帮助企业专业地表达其信息。"],
+      ["工作原则", "我们以清晰、责任、一致性并尊重客户目标的方式开展每一个传播项目。"],
+    ],
+    companyTitle: "官方企业信息",
+    contactTitle: "联系信息",
+  },
+  servicesPage: {
+    eyebrow: "我们的服务",
+    title: "服务与运营领域",
+    intro: "TRIEU HY MEDIA 融合广告与传播支持、CocoDrama 数字产品以及 Hỷ Garden 咖啡工作空间的运营。",
+    scope: "支持范围",
+    process: "基本流程",
+    discuss: "讨论您的项目",
+    visualTitle: "从传播服务到数字产品与共享空间",
+    visualLabels: ["创意策划与方向", "通过 CocoDrama 传播数字产品"],
+  },
+  contactPage: {
+    eyebrow: "联系我们",
+    title: "开启一次清晰的沟通",
+    intro: "欢迎就广告与传播服务、CocoDrama、Hỷ Garden 咖啡工作空间或企业官方信息联系 TRIEU HY MEDIA。",
+    details: "企业联系信息",
+    map: "在 Google 地图中打开地址",
+    formTitle: "发送咨询",
+    formIntro: "请填写以下表单。若邮件服务尚未配置，我们会提供直接发送邮件的选项，不会显示虚假的成功提示。",
+    fields: { name: "姓名", company: "公司", email: "电子邮箱", phone: "电话", subject: "主题", message: "留言内容", consent: "我同意 TRIEU HY MEDIA 使用这些信息回复我的咨询。", submit: "发送咨询", sending: "正在发送…" },
+  },
+  privacy: {
+    title: "隐私政策",
+    intro: `本隐私政策说明 ${company.legalNameEn} 如何处理通过官方网站提交的信息。`,
+    sections: [
+      ["我们收集的信息", "我们可能收集您通过联系表单自愿提供的信息，包括姓名、公司、电子邮箱、电话号码、主题和留言。"],
+      ["信息收集目的", "这些信息用于回复咨询、了解业务传播需求、维持相关沟通，并保护网站免受滥用。"],
+      ["业务沟通", "我们仅会就您的咨询或正在进行的业务讨论，使用您提供的联系方式与您沟通。"],
+      ["数据保留", "咨询信息仅会在沟通、记录保存和合法企业管理所合理需要的期间内保留。"],
+      ["Cookie 与分析", "网站目前不使用非必要 Cookie 或广告分析工具。为提供和保护网站，可能会处理必要的技术数据。"],
+      ["第三方服务", "托管和邮件服务商可能会在提供服务所需范围内处理有限的技术或表单信息，并适用其自身隐私条款。"],
+      ["数据保护", "我们采取合理的管理和技术措施保护已提交的信息；任何互联网传输或存储方式都无法保证绝对安全。"],
+      ["您的权利", "在适用义务和合理验证的前提下，您可请求访问、更正或删除已提交的个人信息。"],
+      ["外部链接", "本网站链接的外部网站受其自身隐私惯例约束，我们不对其内容或政策负责。"],
+      ["政策变更", "我们可能因网站或信息处理方式变更而更新本政策，更新内容发布时将同步更新生效日期。"],
+    ],
+  },
+  terms: {
+    title: "使用条款",
+    intro: "本使用条款适用于访问和使用 TRIEU HY MEDIA 官方网站。",
+    sections: [
+      ["接受条款", "使用本网站即表示您同意这些条款；如不同意，请停止使用本网站。"],
+      ["允许使用", "您可以将本网站用于合法的信息查询和业务沟通，不得干扰网站的运营、安全或可用性。"],
+      ["企业信息", `本网站展示 ${company.legalNameEn} 的官方信息，用于透明披露和一般参考。`],
+      ["知识产权", "除非另有说明，网站的文字、版式、图形及其他原创材料均归 TRIEU HY MEDIA 所有或获授权使用；复制或商业再利用须经许可。"],
+      ["信息准确性", "我们致力于保持网站信息准确和更新。服务描述仅为一般性说明，不构成有约束力的要约、保证或专业建议。"],
+      ["外部链接", "外部网站链接仅为便利提供，我们不控制或认可其内容、安全性或可用性。"],
+      ["网站可用性", "在合理必要时，我们可能维护、更新或暂时暂停网站部分内容；不保证持续、不中断的可用性。"],
+      ["责任限制", "在合理允许的范围内，TRIEU HY MEDIA 不对仅因依赖一般网站内容或临时不可用而产生的间接损失负责。"],
+      ["条款变更", "当网站或服务发生变化时，我们可能更新本条款；更新条款发布后即生效。"],
+    ],
   },
 } as const;
 
@@ -263,6 +390,7 @@ export const content = {
       ],
     },
   },
+  zh: zhContent,
 } as const;
 
 export function getContent(locale: Locale) {

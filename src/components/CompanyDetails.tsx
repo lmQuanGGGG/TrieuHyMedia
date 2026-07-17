@@ -5,16 +5,16 @@ import { getContent } from "@/src/content/site";
 export function CompanyDetails({ locale, compact = false }: { locale: Locale; compact?: boolean }) {
   const t = getContent(locale);
   const rows = [
-    [t.labels.legalName, locale === "en" ? company.legalNameEn : company.legalNameVi],
+    [t.labels.legalName, locale === "vi" ? company.legalNameVi : company.legalNameEn],
     ...(company.showVietnameseLegalName && locale === "en" ? [[t.labels.legalNameVi, company.legalNameVi]] : []),
     [t.labels.shortName, company.shortName],
     [t.labels.businessId, company.businessId],
-    [t.labels.registrationDate, locale === "en" ? company.registrationDateEn : company.registrationDateVi],
-    [t.labels.status, locale === "en" ? company.operationStatusEn : company.operationStatusVi],
-    [t.labels.companyType, locale === "en" ? company.companyTypeEn : company.companyTypeVi],
-    [t.labels.activity, locale === "en" ? company.primaryBusinessActivityEn : company.primaryBusinessActivityVi],
-    ...(company.showRepresentative ? [[t.labels.representative, `${locale === "en" ? company.representativeEn : company.representativeVi} — ${company.representativeTitle}`]] : []),
-    [t.labels.address, locale === "en" ? company.addressEn : company.addressVi],
+    [t.labels.registrationDate, locale === "vi" ? company.registrationDateVi : company.registrationDateEn],
+    [t.labels.status, locale === "vi" ? company.operationStatusVi : company.operationStatusEn],
+    [t.labels.companyType, locale === "vi" ? company.companyTypeVi : company.companyTypeEn],
+    [t.labels.activity, locale === "vi" ? company.primaryBusinessActivityVi : company.primaryBusinessActivityEn],
+    ...(company.showRepresentative ? [[t.labels.representative, `${locale === "vi" ? company.representativeVi : company.representativeEn} — ${company.representativeTitle}`]] : []),
+    [t.labels.address, locale === "vi" ? company.addressVi : company.addressEn],
   ];
 
   return (

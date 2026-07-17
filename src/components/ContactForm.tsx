@@ -21,18 +21,18 @@ export function ContactForm({ locale }: { locale: Locale }) {
       const result = await response.json() as { message?: string; fallback?: boolean };
       if (response.ok) {
         setStatus("success");
-        setMessage(locale === "en" ? "Your inquiry was sent successfully." : "Yêu cầu của bạn đã được gửi thành công.");
+        setMessage(locale === "en" ? "Your inquiry was sent successfully." : locale === "zh" ? "您的咨询已成功发送。" : "Yêu cầu của bạn đã được gửi thành công.");
         form.reset();
       } else if (result.fallback) {
         setStatus("fallback");
-        setMessage(locale === "en" ? "Online delivery is not configured yet. Please send your inquiry directly by email." : "Dịch vụ gửi trực tuyến chưa được cấu hình. Vui lòng gửi yêu cầu trực tiếp qua email.");
+        setMessage(locale === "en" ? "Online delivery is not configured yet. Please send your inquiry directly by email." : locale === "zh" ? "在线发送功能尚未配置，请直接通过电子邮件发送您的咨询。" : "Dịch vụ gửi trực tuyến chưa được cấu hình. Vui lòng gửi yêu cầu trực tiếp qua email.");
       } else {
         setStatus("error");
-        setMessage(result.message || (locale === "en" ? "Please review the form and try again." : "Vui lòng kiểm tra biểu mẫu và thử lại."));
+        setMessage(result.message || (locale === "en" ? "Please review the form and try again." : locale === "zh" ? "请检查表单后重试。" : "Vui lòng kiểm tra biểu mẫu và thử lại."));
       }
     } catch {
       setStatus("fallback");
-      setMessage(locale === "en" ? "We could not connect to the delivery service. Please send your inquiry directly by email." : "Không thể kết nối dịch vụ gửi. Vui lòng gửi yêu cầu trực tiếp qua email.");
+      setMessage(locale === "en" ? "We could not connect to the delivery service. Please send your inquiry directly by email." : locale === "zh" ? "无法连接到发送服务，请直接通过电子邮件发送您的咨询。" : "Không thể kết nối dịch vụ gửi. Vui lòng gửi yêu cầu trực tiếp qua email.");
     }
   }
 

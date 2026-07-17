@@ -7,7 +7,7 @@ import { pageMetadata } from "@/src/lib/metadata";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return pageMetadata(locale, "/privacy-policy", locale === "en" ? "Privacy Policy | TRIEU HY MEDIA" : "Chính sách bảo mật | TRIEU HY MEDIA");
+  return pageMetadata(locale, "/privacy-policy", locale === "en" ? "Privacy Policy | TRIEU HY MEDIA" : locale === "zh" ? "隐私政策 | TRIEU HY MEDIA" : "Chính sách bảo mật | TRIEU HY MEDIA");
 }
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {

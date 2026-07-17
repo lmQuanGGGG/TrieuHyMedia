@@ -34,7 +34,7 @@ export default async function LocaleLayout({
       contactType: "customer service",
       email: company.email,
       telephone: company.phoneSchema,
-      availableLanguage: ["Vietnamese", "English"],
+      availableLanguage: ["Vietnamese", "English", "Chinese"],
     },
     taxID: company.businessId,
     foundingDate: company.registrationDateIso,
@@ -49,7 +49,7 @@ export default async function LocaleLayout({
 
   return (
     <>
-      <a className="skip-link" href="#main-content">{locale === "en" ? "Skip to content" : "Chuyển đến nội dung"}</a>
+      <a className="skip-link" href="#main-content">{locale === "en" ? "Skip to content" : locale === "zh" ? "跳至内容" : "Chuyển đến nội dung"}</a>
       <Header locale={locale} nav={t.nav} />
       <main id="main-content">{children}</main>
       <Footer locale={locale} />

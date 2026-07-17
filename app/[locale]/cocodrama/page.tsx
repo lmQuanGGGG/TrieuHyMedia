@@ -12,10 +12,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMetadata(
     locale,
     "/cocodrama",
-    locale === "en" ? "CocoDrama | Short-Form Streaming by TRIEU HY MEDIA" : "CocoDrama | Ứng dụng phim ngắn của TRIEU HY MEDIA",
+    locale === "en" ? "CocoDrama | Short-Form Streaming by TRIEU HY MEDIA" : locale === "zh" ? "CocoDrama | TRIEU HY MEDIA 短剧应用" : "CocoDrama | Ứng dụng phim ngắn của TRIEU HY MEDIA",
     locale === "en"
       ? "CocoDrama is a localized short-form streaming application for Vietnam, Thailand, Indonesia and Malaysia."
-      : "CocoDrama là ứng dụng phim ngắn được bản địa hóa cho Việt Nam, Thái Lan, Indonesia và Malaysia.",
+      : locale === "zh" ? "CocoDrama 是一款面向越南、泰国、印度尼西亚和马来西亚进行本地化的短剧应用。" : "CocoDrama là ứng dụng phim ngắn được bản địa hóa cho Việt Nam, Thái Lan, Indonesia và Malaysia.",
   );
 }
 
@@ -68,8 +68,8 @@ export default async function CocodramaPage({ params }: { params: Promise<{ loca
         <div className="site-container coco-localization-grid">
           <div><h2 className="section-title">{t.localizationTitle}</h2><p>{t.localizationIntro}</p></div>
           <div className="coco-language-list">
-            <div><span>{locale === "en" ? "Languages" : "Ngôn ngữ"}</span>{t.languages.map((language) => <strong key={language}>{language}</strong>)}</div>
-            <div><span>{locale === "en" ? "Markets" : "Thị trường"}</span>{t.markets.map((market) => <strong key={market}>{market}</strong>)}</div>
+            <div><span>{locale === "en" ? "Languages" : locale === "zh" ? "语言" : "Ngôn ngữ"}</span>{t.languages.map((language) => <strong key={language}>{language}</strong>)}</div>
+            <div><span>{locale === "en" ? "Markets" : locale === "zh" ? "市场" : "Thị trường"}</span>{t.markets.map((market) => <strong key={market}>{market}</strong>)}</div>
           </div>
         </div>
       </section>

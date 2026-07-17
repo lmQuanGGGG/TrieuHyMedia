@@ -24,8 +24,12 @@ export function Header({ locale, nav }: Props) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const otherLocale = locale === "en" ? "vi" : "en";
-  const switchHref = pathname.replace(/^\/(en|vi)/, `/${otherLocale}`);
+  const localeOptions = [
+    ["en", "EN · English"],
+    ["vi", "VI · Tiếng Việt"],
+    ["zh", "中文 · 简体中文"],
+  ] as const;
+  const localeHref = (target: string) => pathname.replace(/^\/(en|vi|zh)/, `/${target}`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -54,18 +58,10 @@ export function Header({ locale, nav }: Props) {
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {links.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
-          <div className="language-switch" aria-label={locale === "en" ? "Language selection" : "Chọn ngôn ngữ"}>
-            {locale === "en" ? (
-              <>
-                <span aria-current="page">EN</span>
-                <Link href={switchHref} hrefLang="vi" aria-label="Chuyển sang Tiếng Việt">VI</Link>
-              </>
-            ) : (
-              <>
-                <Link href={switchHref} hrefLang="en" aria-label="Switch to English">EN</Link>
-                <span aria-current="page">VI</span>
-              </>
-            )}
+          <div className="language-switch" aria-label="Language selection">
+            {localeOptions.map(([code]) => code === locale
+              ? <span key={code} aria-current="page">{code === "zh" ? "中文" : code.toUpperCase()}</span>
+              : <Link key={code} href={localeHref(code)} hrefLang={code}>{code === "zh" ? "中文" : code.toUpperCase()}</Link>)}
           </div>
           <Link href={`/${locale}/contact`} className="header-cta">{nav.contactUs}</Link>
         </nav>
@@ -82,18 +78,10 @@ export function Header({ locale, nav }: Props) {
       {open && (
         <nav id="mobile-navigation" className="mobile-nav site-container" aria-label="Mobile navigation">
           {links.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
-          <div className="mobile-language-switch" aria-label={locale === "en" ? "Language selection" : "Chọn ngôn ngữ"}>
-            {locale === "en" ? (
-              <>
-                <span aria-current="page">EN · English</span>
-                <Link href={switchHref} hrefLang="vi" onClick={() => setOpen(false)}>VI · Tiếng Việt</Link>
-              </>
-            ) : (
-              <>
-                <Link href={switchHref} hrefLang="en" onClick={() => setOpen(false)}>EN · English</Link>
-                <span aria-current="page">VI · Tiếng Việt</span>
-              </>
-            )}
+          <div className="mobile-language-switch" aria-label="Language selection">
+            {localeOptions.map(([code, label]) => code === locale
+              ? <span key={code} aria-current="page">{label}</span>
+              : <Link key={code} href={localeHref(code)} hrefLang={code} onClick={() => setOpen(false)}>{label}</Link>)}
           </div>
           <Link href={`/${locale}/contact`} className="button-primary" onClick={() => setOpen(false)}>{nav.contactUs}</Link>
         </nav>
