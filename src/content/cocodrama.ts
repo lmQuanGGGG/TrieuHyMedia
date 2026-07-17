@@ -1,0 +1,60 @@
+import type { Locale } from "@/src/content/site";
+
+export const cocodramaContent = {
+  en: {
+    eyebrow: "A digital product by TRIEU HY MEDIA",
+    title: "Short-form stories, localized for Southeast Asia",
+    intro: "CocoDrama is a short-form streaming application built around licensed film content sourced from China and localized for audiences across Vietnam, Thailand, Indonesia and Malaysia.",
+    heroFacts: ["Four markets", "Five languages", "15 episodes free"],
+    overviewTitle: "A flexible short-drama experience",
+    overview: "CocoDrama brings emotionally rich, fast-paced short dramas that fit the modern rhythm of life in Southeast Asia. Each episode runs for around three minutes while still delivering climaxes, turning points, surprising twists and an engaging continuous story. The content explores themes close to Asian cultures, including love, family, careers, hidden identities, coming-of-age journeys and overcoming adversity. Through digital technology and artificial intelligence, CocoDrama supports content creation, language localization, subtitle optimization and a personalized viewing experience. Each moment of entertainment is designed not only to help viewers unwind, but also to spark emotion and inspiration for everyday life.",
+    accessTitle: "How viewing access works",
+    accessItems: [
+      ["Start free", "The first 15 episodes of supported titles are available to watch free of charge."],
+      ["Subscribe", "Viewers can choose weekly, monthly or yearly packages to continue watching without relying on ad-unlocks."],
+      ["Watch with ads", "Viewers without an active package can unlock supported paid episodes after completing the required advertisement."],
+    ],
+    localizationTitle: "Localized for four markets",
+    localizationIntro: "Licensed source content is prepared for regional audiences through language localization and market-specific delivery.",
+    languages: ["Vietnamese", "Thai", "Bahasa Indonesia", "Bahasa Melayu", "English"],
+    markets: ["Vietnam", "Thailand", "Indonesia", "Malaysia"],
+    productTitle: "Product experience",
+    productIntro: "CocoDrama includes content discovery, ranked and recommended titles, a vertical viewing experience and playback controls designed for short episodic content.",
+    paymentsTitle: "Packages and payment connections",
+    payments: "Weekly, monthly and yearly packages are supported through payment connections that include Apple Pay, Google Pay and integrated third-party providers where available.",
+    paymentNote: "Payment methods, content access and advertising availability may vary by market, platform and distribution policy.",
+    ctaTitle: "Discuss CocoDrama and digital content partnerships",
+    cta: "Contact TRIEU HY MEDIA",
+    imageLabels: ["CocoDrama discovery experience", "CocoDrama mobile recommendations", "Popular short-drama ranking", "Player settings and viewing controls"],
+  },
+  vi: {
+    eyebrow: "Sản phẩm số của TRIEU HY MEDIA",
+    title: "Phim ngắn được bản địa hóa cho Đông Nam Á",
+    intro: "CocoDrama là ứng dụng xem phim ngắn, sử dụng nội dung phim có bản quyền từ nguồn Trung Quốc và bản địa hóa cho người xem tại Việt Nam, Thái Lan, Indonesia và Malaysia.",
+    heroFacts: ["Bốn thị trường", "Năm ngôn ngữ", "15 tập miễn phí"],
+    overviewTitle: "Trải nghiệm phim ngắn linh hoạt",
+    overview: "CocoDrama mang đến những bộ phim ngắn giàu cảm xúc, tiết tấu nhanh và phù hợp với nhịp sống hiện đại của người dùng Đông Nam Á. Mỗi tập chỉ khoảng 3 phút nhưng vẫn có cao trào, nút thắt, cú lật bất ngờ và mạch truyện liền cuốn hút. Nội dung khai thác nhiều chủ đề gần gũi với văn hóa châu Á như tình yêu, gia đình, sự nghiệp, bí mật thân phận, hành trình trưởng thành và vượt lên số phận. Bằng công nghệ số và trí tuệ nhân tạo, CocoDrama hỗ trợ sáng tạo nội dung, bản địa hóa ngôn ngữ, tối ưu phụ đề và cá nhân hóa trải nghiệm xem. Nhờ đó, mỗi khoảnh khắc giải trí không chỉ giúp người dùng thư giãn mà còn khơi gợi cảm xúc và cảm hứng cho cuộc sống.",
+    accessTitle: "Cách người xem truy cập nội dung",
+    accessItems: [
+      ["Bắt đầu miễn phí", "15 tập đầu của các nội dung được hỗ trợ có thể xem miễn phí."],
+      ["Đăng ký theo gói", "Người xem có thể chọn gói tuần, tháng hoặc năm để tiếp tục xem mà không phụ thuộc vào hình thức mở khóa bằng quảng cáo."],
+      ["Xem bằng quảng cáo", "Người xem chưa có gói hoạt động có thể mở các tập thu phí được hỗ trợ sau khi xem hoàn tất quảng cáo yêu cầu."],
+    ],
+    localizationTitle: "Bản địa hóa cho bốn thị trường",
+    localizationIntro: "Nội dung nguồn có bản quyền được chuẩn bị cho người xem trong khu vực thông qua bản địa hóa ngôn ngữ và phân phối phù hợp với từng thị trường.",
+    languages: ["Tiếng Việt", "Tiếng Thái", "Tiếng Indonesia", "Tiếng Malay", "Tiếng Anh"],
+    markets: ["Việt Nam", "Thái Lan", "Indonesia", "Malaysia"],
+    productTitle: "Trải nghiệm sản phẩm",
+    productIntro: "CocoDrama có trải nghiệm khám phá nội dung, bảng xếp hạng và đề xuất phim, trình xem dọc cùng các thiết lập phát phù hợp với nội dung phim ngắn theo tập.",
+    paymentsTitle: "Gói dịch vụ và kết nối thanh toán",
+    payments: "Các gói tuần, tháng và năm được hỗ trợ thông qua kết nối thanh toán gồm Apple Pay, Google Pay và các nhà cung cấp bên thứ ba đã tích hợp khi khả dụng.",
+    paymentNote: "Phương thức thanh toán, quyền truy cập nội dung và khả năng xem quảng cáo có thể thay đổi theo thị trường, nền tảng và chính sách phân phối.",
+    ctaTitle: "Trao đổi về CocoDrama và cơ hội hợp tác nội dung số",
+    cta: "Liên hệ TRIEU HY MEDIA",
+    imageLabels: ["Trải nghiệm khám phá nội dung CocoDrama", "Đề xuất phim trên ứng dụng CocoDrama", "Bảng xếp hạng phim ngắn phổ biến", "Thiết lập trình phát và tùy chọn xem"],
+  },
+} as const satisfies Record<Locale, object>;
+
+export function getCocodramaContent(locale: Locale) {
+  return cocodramaContent[locale];
+}
