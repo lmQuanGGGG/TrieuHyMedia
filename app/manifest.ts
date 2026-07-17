@@ -10,6 +10,6 @@ export default function manifest(): MetadataRoute.Manifest {
     display: "standalone",
     background_color: "#FAFAF8",
     theme_color: "#FAFAF8",
-    icons: [{ src: "/logos/trieu-hy-media-tab-logo.png", sizes: "1399x1124", type: "image/png", purpose: "any" }],
+    icons: [{ src: "/logos/logo1.png", sizes: "1672x941", type: "image/png", purpose: "any" }],
   };
 }

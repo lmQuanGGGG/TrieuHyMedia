@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   formatDetection: { email: false, address: false, telephone: false },
   icons: {
-    icon: [{ url: "/logos/trieu-hy-media-tab-logo.png", sizes: "1399x1124", type: "image/png" }],
-    shortcut: "/logos/trieu-hy-media-tab-logo.png",
-    apple: [{ url: "/logos/trieu-hy-media-tab-logo.png", sizes: "1399x1124", type: "image/png" }],
+    icon: [{ url: "/logos/logo1.png", sizes: "1672x941", type: "image/png" }],
+    shortcut: "/logos/logo1.png",
+    apple: [{ url: "/logos/logo1.png", sizes: "1672x941", type: "image/png" }],
   },
   manifest: "/manifest.webmanifest",
   openGraph: {

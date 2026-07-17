@@ -348,6 +348,12 @@ textarea {
   object-fit: contain;
 }
 
+.brand-logo-full {
+  display: block;
+  width: 112px;
+  height: auto;
+}
+
 .site-header--dark .brand-logo--horizontal {
   padding: 3px 7px;
   background: rgba(255, 255, 255, 0.96);
@@ -1729,6 +1735,12 @@ details p {
   object-fit: contain;
 }
 
+.footer-logo-full {
+  display: block;
+  width: 238px;
+  height: auto;
+}
+
 .footer-grid p {
   margin: 0;
   color: var(--muted);
@@ -1951,6 +1963,10 @@ details p {
   .brand-logo-wordmark {
     width: 146px;
     height: 31px;
+  }
+
+  .brand-logo-full {
+    width: 98px;
   }
 
   .hero {
