@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Noto_Sans_SC } from "next/font/google";
 import { company } from "@/src/config/company";
 import "./globals.css";
 
@@ -7,6 +7,15 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin", "latin-ext"],
   display: "swap",
+});
+
+// Keep the site typography consistent whenever Chinese copy is introduced.
+// Geist covers the Latin/Vietnamese interface; Noto Sans SC supplies CJK glyphs.
+const notoSansSC = Noto_Sans_SC({
+  variable: "--font-noto-sans-sc",
+  weight: "variable",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -60,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${notoSansSC.variable} antialiased`}>{children}</body>
     </html>
   );
 }
