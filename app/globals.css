@@ -546,41 +546,20 @@ textarea {
 figure[data-tilt] {
   --tilt-x: 0deg;
   --tilt-y: 0deg;
-  --pointer-x: 50%;
-  --pointer-y: 50%;
-  transform: perspective(1200px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  --tilt-lift: 0px;
+  transform: perspective(1200px) translateZ(var(--tilt-lift)) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
   transform-style: preserve-3d;
   transition: transform 180ms ease, box-shadow 230ms ease;
   will-change: transform;
 }
 
-/* Shared image interaction: the tilt follows the cursor while the artwork
-   gains a small amount of depth and a moving highlight. */
+/* Shared image interaction: images follow the cursor and rise in 3D space
+   without applying a brightness or highlight overlay. */
 @media (hover: hover) and (pointer: fine) {
-  figure[data-tilt]::after {
-    position: absolute;
-    z-index: 2;
-    inset: 0;
-    content: "";
-    pointer-events: none;
-    background:
-      radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(255, 255, 255, 0.3), transparent 31%),
-      linear-gradient(118deg, transparent 35%, rgba(255, 255, 255, 0.12) 50%, transparent 65%);
-    opacity: 0;
-    transition: opacity 280ms ease;
-  }
-
   figure[data-tilt]:hover {
+    --tilt-lift: 22px;
     z-index: 3;
     box-shadow: 0 26px 52px rgba(17, 17, 17, 0.16);
-  }
-
-  figure[data-tilt]:hover::after {
-    opacity: 1;
-  }
-
-  figure[data-tilt]:hover img {
-    transform: scale(1.045);
   }
 }
 
@@ -602,14 +581,6 @@ figure[data-tilt] {
   height: 100%;
   object-fit: cover;
   transition: transform 650ms cubic-bezier(.2,.7,.2,1);
-}
-
-.home-about-image:hover img,
-.page-hero-media:hover img,
-.about-gallery figure:hover img,
-.services-visual-grid figure:hover img,
-.contact-place-photo:hover img {
-  transform: scale(1.018);
 }
 
 .home-about-image figcaption,
@@ -665,15 +636,14 @@ figure[data-tilt] {
 .garden-photo {
   --tilt-x: 0deg;
   --tilt-y: 0deg;
-  --pointer-x: 50%;
-  --pointer-y: 50%;
+  --tilt-lift: 0px;
   position: relative;
   min-width: 0;
   aspect-ratio: 4 / 3;
   margin: 0;
   overflow: hidden;
   background: #d8d2c7;
-  transform: perspective(1200px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transform: perspective(1200px) translateZ(var(--tilt-lift)) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
   transform-style: preserve-3d;
   transition: transform 180ms ease, box-shadow 240ms ease;
   will-change: transform;
@@ -692,28 +662,10 @@ figure[data-tilt] {
   transition: transform 650ms cubic-bezier(.2,.7,.2,1);
 }
 
-.garden-photo::after {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  content: "";
-  background: radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(255, 255, 255, 0.22), transparent 34%);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 220ms ease;
-}
-
 .garden-photo:hover {
+  --tilt-lift: 20px;
   z-index: 2;
   box-shadow: 0 22px 45px rgba(17, 17, 17, 0.13);
-}
-
-.garden-photo:hover::after {
-  opacity: 1;
-}
-
-.garden-photo:hover img {
-  transform: scale(1.025);
 }
 
 .garden-photo figcaption {
@@ -1393,7 +1345,6 @@ details p {
   .cocodrama-phone-stage:hover .cocodrama-phone--back {
     transform: translate(-116%, -54%) rotateY(24deg) rotateZ(-9deg) scale(0.98);
     opacity: 0.95;
-    filter: brightness(1.08);
     box-shadow: -22px 52px 94px rgba(0, 0, 0, 0.56);
   }
 
@@ -1529,7 +1480,6 @@ details p {
   .coco-device-scene:focus-visible .coco-device--left {
     transform: translate(-142%, -53%) rotateY(30deg) rotateZ(-9deg) scale(0.88);
     opacity: 0.9;
-    filter: brightness(1.08);
     box-shadow: -20px 48px 92px rgba(0, 0, 0, 0.55);
   }
 
@@ -1543,7 +1493,6 @@ details p {
   .coco-device-scene:focus-visible .coco-device--right {
     transform: translate(42%, -53%) rotateY(-30deg) rotateZ(9deg) scale(0.9);
     opacity: 0.92;
-    filter: brightness(1.08);
     box-shadow: 20px 48px 92px rgba(0, 0, 0, 0.55);
   }
 }
@@ -1652,11 +1601,12 @@ details p {
 .coco-product-gallery figure {
   --tilt-x: 0deg;
   --tilt-y: 0deg;
+  --gallery-lift: 0px;
   margin: 0;
   height: clamp(470px, 47vw, 760px);
   overflow: hidden;
   background: #15100f;
-  transform: perspective(1200px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transform: perspective(1200px) translateZ(var(--gallery-lift)) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
   transition: transform 180ms ease, box-shadow 220ms ease;
 }
 
@@ -1664,7 +1614,7 @@ details p {
 .coco-product-gallery figure.reveal-item {
   --gallery-reveal-y: 56px;
   opacity: 0;
-  transform: perspective(1200px) translate3d(0, var(--gallery-reveal-y), 0) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transform: perspective(1200px) translate3d(0, var(--gallery-reveal-y), var(--gallery-lift)) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
   transition:
     opacity 700ms cubic-bezier(.2,.7,.2,1) var(--reveal-delay),
     transform 780ms cubic-bezier(.16,1,.3,1) var(--reveal-delay),
@@ -1674,10 +1624,11 @@ details p {
 .coco-product-gallery figure.reveal-item.reveal-visible {
   --gallery-reveal-y: 0px;
   opacity: 1;
-  transform: perspective(1200px) translate3d(0, var(--gallery-reveal-y), 0) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transform: perspective(1200px) translate3d(0, var(--gallery-reveal-y), var(--gallery-lift)) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
 }
 
 .coco-product-gallery figure:hover {
+  --gallery-lift: 22px;
   box-shadow: 0 28px 55px rgba(17, 17, 17, 0.16);
 }
 
