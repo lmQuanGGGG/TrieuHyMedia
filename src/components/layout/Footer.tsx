@@ -12,7 +12,7 @@ export function Footer({ locale }: { locale: Locale }) {
         <div className="footer-grid">
           <div>
             <div className="footer-brand">
-              <Image className="footer-logo-full" src="/logos/logo1.png" alt="TRIỆU HỶ MEDIA" width={1677} height={938} unoptimized />
+              <Image className="footer-logo-full" src="/logos/logo2.png" alt="TRIỆU HỶ MEDIA" width={1677} height={938} unoptimized />
             </div>
             <p>{company.legalNameEn}</p>
             {company.showVietnameseLegalName && <p>{company.legalNameVi}</p>}
