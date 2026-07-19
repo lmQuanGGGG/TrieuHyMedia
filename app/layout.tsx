@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   formatDetection: { email: false, address: false, telephone: false },
   icons: {
-    icon: [{ url: "/logos/logo2.png", sizes: "1677x938", type: "image/png" }],
-    shortcut: "/logos/logo2.png",
-    apple: [{ url: "/logos/logo2.png", sizes: "1677x938", type: "image/png" }],
+    icon: [{ url: "/logos/logo4.png", sizes: "1677x938", type: "image/png" }],
+    shortcut: "/logos/logo4.png",
+    apple: [{ url: "/logos/logo4.png", sizes: "1677x938", type: "image/png" }],
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
