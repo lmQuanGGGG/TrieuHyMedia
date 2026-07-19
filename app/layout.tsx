@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   formatDetection: { email: false, address: false, telephone: false },
   icons: {
-    icon: [{ url: "/logos/logo4.png", sizes: "1677x938", type: "image/png" }],
-    shortcut: "/logos/logo4.png",
-    apple: [{ url: "/logos/logo4.png", sizes: "1677x938", type: "image/png" }],
+    icon: [{ url: "/company-logo.png", sizes: "688x626", type: "image/png" }],
+    shortcut: "/company-logo.png",
+    apple: [{ url: "/company-logo.png", sizes: "688x626", type: "image/png" }],
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
@@ -51,14 +51,14 @@ export const metadata: Metadata = {
     description:
       `Official website of ${company.legalNameEn}, a legally registered advertising company based in Da Nang, Vietnam.`,
     url: "https://trieuhymedia.net/en",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "TRIEU HY MEDIA — Creative advertising built with clarity." }],
+    images: [{ url: "/hy-garden/trieu-hy-office.jpg", width: 1448, height: 1086, alt: "TRIỆU HỶ MEDIA office in Da Nang." }],
   },
   twitter: {
     card: "summary_large_image",
     title: "TRIEU HY MEDIA | Advertising Company in Da Nang",
     description:
       `Official website of ${company.legalNameEn}, a legally registered advertising company based in Da Nang, Vietnam.`,
-    images: ["/og.png"],
+    images: ["/hy-garden/trieu-hy-office.jpg"],
   },
 };
 
