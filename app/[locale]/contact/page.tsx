@@ -61,7 +61,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             </div>
           </div>
           <div className="contact-map">
-            <iframe title={t.contactPage.map} src={mapsEmbedUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+            <iframe title={t.contactPage.map} src={mapsEmbedUrl} loading="eager" referrerPolicy="no-referrer-when-downgrade" />
           </div>
         </div>
       </section>
