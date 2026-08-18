@@ -74,7 +74,23 @@ const copy = {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return pageMetadata(locale, "/hy-garden", locale === "vi" ? "Hỷ Garden | Coffee & Workspace" : "Hy Garden | Coffee & Workspace", "Hy Garden coffee and workspace menu in Da Nang.");
+  const title = locale === "vi" ? "Hỷ Garden | Coffee & Workspace" : "Hy Garden | Coffee & Workspace";
+  const description = "Hy Garden coffee and workspace menu in Da Nang.";
+  const metadata = pageMetadata(locale, "/hy-garden", title, description);
+
+  return {
+    ...metadata,
+    openGraph: {
+      type: "website",
+      siteName: "Hỷ Garden",
+      title,
+      description,
+      url: `https://trieuhymedia.net/${locale}/hy-garden`,
+      locale: locale === "vi" ? "vi_VN" : locale === "zh" ? "zh_CN" : "en_US",
+      images: [{ url: "/hy-garden/og.jpg", width: 1200, height: 630, alt: "Hỷ Garden — Coffee & Workspace" }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: ["/hy-garden/og.jpg"] },
+  };
 }
 
 export default async function HyGardenPage({ params }: { params: Promise<{ locale: string }> }) {
