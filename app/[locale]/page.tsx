@@ -27,15 +27,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      <section className="hero">
+      <section className="hero hero--office">
         <div className="hero-background" aria-hidden="true">
-          <Image src="/hero-editorial.jpg" alt="" fill priority sizes="100vw" unoptimized />
+          <Image src="/hero-office-ambient.png" alt="" fill priority sizes="100vw" unoptimized />
         </div>
         <div className="site-container hero-content">
           <div className="hero-copy">
             <span className="eyebrow">{t.home.eyebrow}</span>
             <h1 className="display-title">
-              {locale === "vi" ? <>Giải pháp quảng cáo<br />được xây dựng từ<br />sự rõ ràng</> : locale === "zh" ? <>以清晰思路<br />打造创意广告</> : t.home.headline}
+              {locale === "vi" ? <><span className="hero-title-line">Giải pháp quảng cáo</span><span className="hero-title-line">được xây dựng từ</span><span className="hero-title-line">sự rõ ràng</span></> : locale === "zh" ? <><span className="hero-title-line">以清晰思路</span><span className="hero-title-line">打造创意广告</span></> : <span className="hero-title-line">{t.home.headline}</span>}
             </h1>
             <p className="hero-intro body-large">{t.home.intro}</p>
             <div className="hero-actions">
@@ -55,6 +55,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div>
             <p className="body-large">{t.home.hyGarden.description}</p>
             <p className="garden-note">{t.home.hyGarden.note}</p>
+            <Link className="button-primary garden-cta" href={`/${locale}/hy-garden`}>{t.home.hyGarden.cta} <span aria-hidden="true">↗</span></Link>
           </div>
         </div>
         <div className="site-container garden-gallery">

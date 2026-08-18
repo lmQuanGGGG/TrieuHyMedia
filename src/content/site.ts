@@ -84,6 +84,7 @@ const zhContent = {
       title: "Hỷ Garden — 办公室与咖啡空间",
       description: "Hỷ Garden 将 TRIEU HY MEDIA 的办公室和咖啡店融于同一空间。这里服务于公司的日常工作，也提供适合专注工作、团队交流和咖啡会谈的区域。",
       note: "一个让工作、沟通和日常连接自然发生的实用空间。",
+      cta: "探索 Hỷ Garden",
       labels: ["TRIEU HY MEDIA 办公室", "咖啡工作空间", "花园环境", "楼上工作空间"],
     },
     cocodrama: {
@@ -193,6 +194,7 @@ export const content = {
         title: "Hy Garden — office and coffee shop",
         description: "Hy Garden brings together the working office of TRIEU HY MEDIA and a coffee shop within one shared setting. The space supports the company’s daily work while providing areas for focused working sessions, team conversations and time over coffee.",
         note: "A practical environment where work, communication and everyday connection can happen naturally.",
+        cta: "Explore Hy Garden",
         labels: ["TRIEU HY MEDIA office", "Coffee workspace", "Garden setting", "Upstairs workspace"],
       },
       cocodrama: {
@@ -300,6 +302,7 @@ export const content = {
         title: "Hỷ Garden — văn phòng làm việc và coffee shop",
         description: "Hỷ Garden kết hợp văn phòng làm việc của TRIEU HY MEDIA và coffee shop trong cùng một không gian. Đây là nơi phục vụ hoạt động làm việc hằng ngày của công ty, đồng thời có các khu vực phù hợp cho làm việc tập trung, trao đổi đội ngũ và những cuộc trò chuyện bên cà phê.",
         note: "Một môi trường thực tế để công việc, giao tiếp và sự kết nối diễn ra tự nhiên.",
+        cta: "Khám phá Hỷ Garden",
         labels: ["Văn phòng TRIEU HY MEDIA", "Không gian coffee workspace", "Khu sân vườn", "Không gian làm việc tầng trên"],
       },
       cocodrama: {
