@@ -79,6 +79,11 @@ export const cocodramaContent = {
     cta: "联系 TRIEU HY MEDIA",
     imageLabels: ["CocoDrama 内容发现体验", "CocoDrama 移动端推荐", "热门短剧排行榜", "播放器设置与观看控制"],
   },
+  ko: {
+    eyebrow: "TRIEU HY MEDIA의 디지털 제품", title: "동남아시아를 위한 현지화 숏폼 스토리", intro: "CocoDrama는 중국의 정식 라이선스 영상 콘텐츠를 기반으로 베트남, 태국, 인도네시아, 말레이시아 시청자를 위해 현지화한 숏폼 스트리밍 애플리케이션입니다.", heroFacts: ["4개 시장", "5개 언어", "첫 15화 무료"],
+    overviewTitle: "유연한 숏드라마 경험", overview: "CocoDrama는 동남아시아의 현대적인 일상 리듬에 맞는 감정 풍부하고 빠른 전개의 숏드라마를 제공합니다. 각 에피소드는 약 3분이지만 클라이맥스와 반전, 이어지는 이야기를 충분히 담아냅니다. 디지털 기술과 인공지능을 통해 콘텐츠 제작, 언어 현지화, 자막 최적화, 개인화된 시청 경험을 지원합니다.",
+    accessTitle: "시청 이용 방식", accessItems: [["무료로 시작", "지원되는 작품의 첫 15개 에피소드는 무료로 시청할 수 있습니다."], ["구독", "주간, 월간 또는 연간 패키지를 선택해 광고 잠금 해제 없이 계속 시청할 수 있습니다."], ["광고 시청", "활성 패키지가 없는 시청자는 필요한 광고를 완료한 뒤 지원되는 유료 에피소드를 열 수 있습니다."]], localizationTitle: "4개 시장을 위한 현지화", localizationIntro: "정식 라이선스 원본 콘텐츠는 언어 현지화와 시장별 배포를 통해 지역 시청자에게 맞게 준비됩니다.", languages: ["베트남어", "태국어", "인도네시아어", "말레이어", "영어"], markets: ["베트남", "태국", "인도네시아", "말레이시아"], productTitle: "제품 경험", productIntro: "CocoDrama는 콘텐츠 탐색, 랭킹 및 추천, 세로형 시청 경험과 숏폼 에피소드에 맞춘 재생 제어를 제공합니다.", paymentsTitle: "패키지 및 결제 연동", payments: "주간, 월간, 연간 패키지는 사용 가능한 경우 Apple Pay, Google Pay 및 통합된 타사 제공업체를 통해 결제할 수 있습니다.", paymentNote: "결제 방식, 콘텐츠 이용 권한 및 광고 제공 여부는 시장, 플랫폼, 배포 정책에 따라 달라질 수 있습니다.", ctaTitle: "CocoDrama 및 디지털 콘텐츠 협업 상담", cta: "TRIEU HY MEDIA에 문의", imageLabels: ["CocoDrama 콘텐츠 탐색", "CocoDrama 모바일 추천", "인기 숏드라마 랭킹", "플레이어 설정과 시청 제어"],
+  },
 } as const satisfies Record<Locale, object>;
 
 export function getCocodramaContent(locale: Locale) {

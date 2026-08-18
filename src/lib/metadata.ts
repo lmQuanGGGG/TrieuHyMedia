@@ -6,12 +6,14 @@ const descriptions = {
   en: `Official website of ${company.legalNameEn}, a legally registered advertising company based in Da Nang, Vietnam.`,
   vi: `Website chính thức của ${company.legalNameVi}, doanh nghiệp hoạt động trong lĩnh vực quảng cáo tại Đà Nẵng, Việt Nam.`,
   zh: `${company.legalNameEn} 官方网站，一家位于越南岘港、依法注册的广告企业。`,
+  ko: `${company.legalNameEn}의 공식 웹사이트입니다. 베트남 다낭에 기반을 둔 합법 등록 광고 회사입니다.`,
 };
 
 const keywords = {
   en: ["TRIEU HY MEDIA", "advertising company Da Nang", "brand communication", "CocoDrama", "Hy Garden"],
   vi: ["TRIEU HY MEDIA", "công ty quảng cáo Đà Nẵng", "truyền thông thương hiệu", "CocoDrama", "Hỷ Garden"],
   zh: ["TRIEU HY MEDIA", "岘港广告公司", "品牌传播", "CocoDrama", "Hỷ Garden"],
+  ko: ["TRIEU HY MEDIA", "다낭 광고 회사", "브랜드 커뮤니케이션", "CocoDrama", "Hỷ Garden"],
 };
 
 export function pageMetadata(
@@ -32,6 +34,7 @@ export function pageMetadata(
         en: `https://trieuhymedia.net/en${path}`,
         vi: `https://trieuhymedia.net/vi${path}`,
         zh: `https://trieuhymedia.net/zh${path}`,
+        ko: `https://trieuhymedia.net/ko${path}`,
         "x-default": `https://trieuhymedia.net/en${path}`,
       },
     },
@@ -41,7 +44,7 @@ export function pageMetadata(
       title,
       description,
       url: canonical,
-      locale: locale === "vi" ? "vi_VN" : locale === "zh" ? "zh_CN" : "en_US",
+      locale: locale === "vi" ? "vi_VN" : locale === "zh" ? "zh_CN" : locale === "ko" ? "ko_KR" : "en_US",
       images: [{ url: "/og.png", width: 1200, height: 630, alt: "TRIEU HY MEDIA — Creative advertising built with clarity." }],
     },
     twitter: { card: "summary_large_image", title, description, images: ["/og.png"] },

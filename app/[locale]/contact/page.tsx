@@ -12,10 +12,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMetadata(
     locale,
     "/contact",
-    locale === "en" ? `Contact | ${company.legalNameEn}` : locale === "zh" ? `联系我们 | ${company.legalNameEn}` : `Liên hệ | ${company.legalNameVi}`,
+    locale === "en" ? `Contact | ${company.legalNameEn}` : locale === "zh" ? `联系我们 | ${company.legalNameEn}` : locale === "ko" ? `문의 | ${company.legalNameEn}` : `Liên hệ | ${company.legalNameVi}`,
     locale === "en"
       ? "Contact TRIEU HY MEDIA in Da Nang for advertising, brand communication, CocoDrama and Hy Garden workspace inquiries."
-      : locale === "zh" ? "联系位于岘港的 TRIEU HY MEDIA，咨询广告、品牌传播、CocoDrama 和 Hỷ Garden 工作空间。" : "Liên hệ TRIEU HY MEDIA tại Đà Nẵng về quảng cáo, truyền thông thương hiệu, CocoDrama và Hỷ Garden.",
+      : locale === "zh" ? "联系位于岘港的 TRIEU HY MEDIA，咨询广告、品牌传播、CocoDrama 和 Hỷ Garden 工作空间。" : locale === "ko" ? "광고, 브랜드 커뮤니케이션, CocoDrama 및 Hỷ Garden 워크스페이스에 관해 다낭의 TRIEU HY MEDIA로 문의하세요." : "Liên hệ TRIEU HY MEDIA tại Đà Nẵng về quảng cáo, truyền thông thương hiệu, CocoDrama và Hỷ Garden.",
   );
 }
 

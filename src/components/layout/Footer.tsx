@@ -27,8 +27,8 @@ export function Footer({ locale }: { locale: Locale }) {
           </div>
           <div>
             <p className="footer-heading">{t.footer.legal}</p>
-            <Link href={`/${locale}/privacy-policy`}>{locale === "en" ? "Privacy Policy" : locale === "zh" ? "隐私政策" : "Chính sách bảo mật"}</Link>
-            <Link href={`/${locale}/terms-of-use`}>{locale === "en" ? "Terms of Use" : locale === "zh" ? "使用条款" : "Điều khoản sử dụng"}</Link>
+            <Link href={`/${locale}/privacy-policy`}>{locale === "en" ? "Privacy Policy" : locale === "zh" ? "隐私政策" : locale === "ko" ? "개인정보 처리방침" : "Chính sách bảo mật"}</Link>
+            <Link href={`/${locale}/terms-of-use`}>{locale === "en" ? "Terms of Use" : locale === "zh" ? "使用条款" : locale === "ko" ? "이용약관" : "Điều khoản sử dụng"}</Link>
           </div>
           <address>
             <p>{locale === "vi" ? company.addressVi : company.addressEn}</p>

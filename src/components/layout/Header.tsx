@@ -29,8 +29,10 @@ export function Header({ locale, nav }: Props) {
     ["en", "EN · English"],
     ["vi", "VI · Tiếng Việt"],
     ["zh", "中文 · 简体中文"],
+    ["ko", "한국어 · 한국어"],
   ] as const;
-  const localeHref = (target: string) => pathname.replace(/^\/(en|vi|zh)/, `/${target}`);
+  const localeHref = (target: string) => pathname.replace(/^\/(en|vi|zh|ko)/, `/${target}`);
+  const shortLocaleLabel = (code: string) => code === "zh" ? "中文" : code === "ko" ? "한국어" : code.toUpperCase();
   const isActive = (href: string) => {
     const target = href.split("#")[0];
     return !href.includes("#") && pathname === target;
@@ -65,8 +67,8 @@ export function Header({ locale, nav }: Props) {
           {links.map(([label, href]) => <Link key={href} href={href} className={`nav-link${isActive(href) ? " is-active" : ""}`} aria-current={isActive(href) ? "page" : undefined} onClick={() => setOpen(false)}>{label}</Link>)}
           <div className="language-switch" aria-label="Language selection">
             {localeOptions.map(([code]) => code === locale
-              ? <span key={code} aria-current="page">{code === "zh" ? "中文" : code.toUpperCase()}</span>
-              : <Link key={code} href={localeHref(code)} hrefLang={code}>{code === "zh" ? "中文" : code.toUpperCase()}</Link>)}
+              ? <span key={code} aria-current="page">{shortLocaleLabel(code)}</span>
+              : <Link key={code} href={localeHref(code)} hrefLang={code}>{shortLocaleLabel(code)}</Link>)}
           </div>
           <Link href={`/${locale}/contact`} className="header-cta">{nav.contactUs}</Link>
         </nav>
@@ -77,11 +79,12 @@ export function Header({ locale, nav }: Props) {
           aria-controls="mobile-navigation"
           onClick={() => setOpen((value) => !value)}
         >
-          {open ? nav.close : nav.menu}
+          <span>{open ? nav.close : nav.menu}</span>
+          <span aria-hidden="true" className="menu-button-icon">{open ? "×" : "☰"}</span>
         </button>
       </div>
       {open && (
-        <nav id="mobile-navigation" className="mobile-nav site-container" aria-label="Mobile navigation">
+        <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">
           {links.map(([label, href]) => <Link key={href} href={href} className={isActive(href) ? "is-active" : undefined} aria-current={isActive(href) ? "page" : undefined} onClick={() => setOpen(false)}>{label}</Link>)}
           <div className="mobile-language-switch" aria-label="Language selection">
             {localeOptions.map(([code, label]) => code === locale

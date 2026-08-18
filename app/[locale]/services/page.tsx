@@ -23,10 +23,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMetadata(
     locale,
     "/services",
-    locale === "en" ? "Services & Operating Areas | TRIEU HY MEDIA" : locale === "zh" ? "服务与运营领域 | TRIEU HY MEDIA" : "Dịch vụ & Mảng hoạt động | TRIEU HY MEDIA",
+    locale === "en" ? "Services & Operating Areas | TRIEU HY MEDIA" : locale === "zh" ? "服务与运营领域 | TRIEU HY MEDIA" : locale === "ko" ? "서비스 및 운영 분야 | TRIEU HY MEDIA" : "Dịch vụ & Mảng hoạt động | TRIEU HY MEDIA",
     locale === "en"
       ? "Explore advertising strategy, brand communication, creative content, CocoDrama digital product operations and Hy Garden workspace operations by TRIEU HY MEDIA."
-      : locale === "zh" ? "了解 TRIEU HY MEDIA 的广告策略、品牌传播、创意内容、CocoDrama 数字产品运营与 Hỷ Garden 工作空间运营。" : "Khám phá các mảng hoạt động của TRIEU HY MEDIA: chiến lược quảng cáo, truyền thông thương hiệu, nội dung sáng tạo, CocoDrama và Hỷ Garden.",
+      : locale === "zh" ? "了解 TRIEU HY MEDIA 的广告策略、品牌传播、创意内容、CocoDrama 数字产品运营与 Hỷ Garden 工作空间运营。" : locale === "ko" ? "TRIEU HY MEDIA의 광고 전략, 브랜드 커뮤니케이션, 창의적 콘텐츠, CocoDrama 및 Hỷ Garden 운영 분야를 살펴보세요." : "Khám phá các mảng hoạt động của TRIEU HY MEDIA: chiến lược quảng cáo, truyền thông thương hiệu, nội dung sáng tạo, CocoDrama và Hỷ Garden.",
   );
 }
 

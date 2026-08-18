@@ -1,6 +1,6 @@
 import { company } from "@/src/config/company";
 
-export const locales = ["en", "vi", "zh"] as const;
+export const locales = ["en", "vi", "zh", "ko"] as const;
 export type Locale = (typeof locales)[number];
 
 export function isLocale(value: string): value is Locale {
@@ -65,6 +65,31 @@ const shared = {
       website: "网站",
     },
   },
+  ko: {
+    nav: { home: "홈", about: "회사 소개", services: "서비스", garden: "Hỷ Garden", cocodrama: "CocoDrama", contact: "문의", contactUs: "문의하기", menu: "메뉴", close: "닫기" },
+    footer: { company: "회사", legal: "법률 정보", rights: "All rights reserved." },
+    labels: {
+      legalName: "법인명", legalNameVi: "베트남어 법인명", shortName: "약칭", businessId: "사업자 번호 / 세금 번호",
+      registrationDate: "등록일", status: "상태", companyType: "회사 형태", activity: "주요 사업", representative: "법정 대표자",
+      address: "주소", phone: "전화", email: "이메일", website: "웹사이트",
+    },
+  },
+} as const;
+
+const koContent = {
+  ...shared.ko,
+  home: {
+    eyebrow: "기업 공식 웹사이트", headline: "명확한 생각에서 출발하는 창의적 광고", intro: `${company.legalNameEn}는 베트남 다낭에 기반을 둔 합법 등록 광고 회사입니다. 명확한 커뮤니케이션 전략과 창의적인 콘텐츠, 실용적인 광고 솔루션으로 기업을 지원합니다.`, explore: "서비스 살펴보기",
+    overviewTitle: "TRIEU HY MEDIA 소개", overview: `${company.legalNameEn}는 ${company.registrationDateEn}에 등록되어 베트남 다낭 호아쑤언 지역에 본사를 두고 있습니다. 광고 분야에서 명확함, 책임감, 전문성을 바탕으로 활동합니다.`, overviewDetail: "회사 오피스, Hy Garden 커피 워크스페이스, CocoDrama와 같은 디지털 제품 개발을 한 공간에 연결해 집중적인 업무와 창의적인 대화를 지원합니다.", overviewImage: "TRIEU HY MEDIA 업무 공간", learnMore: "회사 더 알아보기",
+    hyGarden: { eyebrow: "업무 환경", title: "Hỷ Garden — 오피스와 커피 공간", description: "Hỷ Garden은 TRIEU HY MEDIA의 업무 공간과 커피숍이 함께 있는 곳입니다. 집중 업무, 팀 대화, 커피를 곁들인 만남을 위한 편안한 환경을 제공합니다.", note: "일과 소통, 일상의 연결이 자연스럽게 이어지는 실용적인 공간입니다.", cta: "Hỷ Garden 둘러보기", labels: ["TRIEU HY MEDIA 오피스", "커피 워크스페이스", "가든 환경", "상층 업무 공간"] },
+    cocodrama: { eyebrow: "디지털 제품", title: "CocoDrama, 동남아 4개 시장을 위한 현지화 숏폼 스토리", description: "정식 라이선스 콘텐츠, 5개 언어 현지화, 구독 또는 광고 기반 에피소드 이용 방식을 제공합니다.", cta: "CocoDrama 살펴보기" },
+    servicesTitle: "광고 및 커뮤니케이션 서비스", servicesIntro: "명확한 방향, 일관된 커뮤니케이션, 실용적인 크리에이티브 실행이 필요한 기업을 위한 집중 지원입니다.", approachTitle: "일하는 방식", approach: [["이해", "비즈니스 환경, 목표, 커뮤니케이션 요구를 먼저 듣습니다."], ["계획", "실용적인 방향과 우선순위, 명확한 업무 범위를 정합니다."], ["제작", "합의된 방향에 맞춰 콘텐츠와 자료를 제작합니다."], ["실행", "신중하게 진행을 조율하고 명확히 공유합니다."], ["검토", "결과와 피드백을 확인하고 필요한 부분을 다듬습니다."]], principlesTitle: "업무 원칙", principles: ["명확성", "책임감", "일관성", "창의성", "전문성"], companyTitle: "회사 정보", ctaTitle: "더 명확한 커뮤니케이션을 시작하세요", ctaText: "광고 및 기업 커뮤니케이션 문의는 TRIEU HY MEDIA로 연락해 주세요.", cta: "팀에 문의하기",
+  },
+  about: { eyebrow: "회사 소개", title: "명확함과 책임감으로 만드는 기업 커뮤니케이션", intro: `${company.legalNameEn}는 베트남 다낭에 본사를 둔 합법 등록 기업입니다. ${company.registrationDateEn}에 사업자 번호 ${company.businessId}로 등록되었습니다.`, sections: [["법적 설립", "회사는 정상 운영 중인 비국영 유한책임회사이며, 등록 사무소는 베트남 다낭 호아쑤언에 있습니다."], ["주요 사업", "회사의 주요 등록 사업은 광고이며, 기업을 위한 실용적인 광고 및 커뮤니케이션 지원에 집중합니다."], ["미션", "실용적인 광고와 커뮤니케이션 솔루션을 통해 기업이 메시지를 전문적으로 전달하도록 돕습니다."], ["업무 원칙", "모든 프로젝트를 명확성, 책임감, 일관성 그리고 고객 목표에 대한 존중으로 대합니다."]], companyTitle: "공식 회사 정보", contactTitle: "연락처" },
+  servicesPage: { eyebrow: "서비스", title: "서비스와 운영 분야", intro: "TRIEU HY MEDIA는 광고·커뮤니케이션 지원, CocoDrama 디지털 제품, Hỷ Garden 커피 워크스페이스 운영을 함께 전개합니다.", scope: "지원 범위", process: "기본 프로세스", discuss: "프로젝트 상담", visualTitle: "커뮤니케이션 서비스부터 디지털 제품과 공유 공간까지", visualLabels: ["창의적 기획과 방향 설정", "CocoDrama를 통한 디지털 제품 커뮤니케이션"] },
+  contactPage: { eyebrow: "문의", title: "명확한 대화를 시작하세요", intro: "광고와 커뮤니케이션 서비스, CocoDrama, Hỷ Garden 커피 워크스페이스 또는 회사 공식 정보에 관해 TRIEU HY MEDIA로 문의해 주세요.", details: "회사 연락처", map: "Google 지도에서 주소 열기", formTitle: "문의 보내기", formIntro: "아래 양식을 작성해 주세요. 이메일 발송 서비스가 설정되지 않은 경우 직접 이메일을 보낼 수 있는 방법을 안내합니다.", fields: { name: "이름", company: "회사", email: "이메일", phone: "전화", subject: "제목", message: "메시지", consent: "TRIEU HY MEDIA가 문의에 답변하기 위해 이 정보를 사용하는 데 동의합니다.", submit: "문의 보내기", sending: "보내는 중…" } },
+  privacy: { title: "개인정보 처리방침", intro: `본 개인정보 처리방침은 ${company.legalNameEn}가 공식 웹사이트를 통해 제출된 정보를 처리하는 방식을 설명합니다.`, sections: [["수집 정보", "문의 양식을 통해 자발적으로 제공하는 이름, 회사, 이메일, 전화번호, 제목 및 메시지를 수집할 수 있습니다."], ["수집 목적", "문의 응답, 비즈니스 커뮤니케이션 요구 파악, 관련 연락 유지 및 웹사이트 보호를 위해 사용합니다."], ["보관 기간", "문의 정보는 커뮤니케이션, 기록 보관 및 적법한 회사 운영에 필요한 합리적인 기간 동안만 보관합니다."], ["외부 서비스", "호스팅 및 이메일 제공업체는 서비스를 제공하는 데 필요한 범위에서 제한된 기술 또는 양식 정보를 처리할 수 있습니다."], ["정보 보호", "제출된 정보를 보호하기 위해 합리적인 관리·기술적 조치를 취하지만, 인터넷 전송이나 저장 방법의 절대적 보안은 보장할 수 없습니다."], ["이용자 권리", "적용되는 의무와 합리적인 본인 확인 절차에 따라 개인정보의 열람, 정정 또는 삭제를 요청할 수 있습니다."] ] },
+  terms: { title: "이용약관", intro: "본 이용약관은 TRIEU HY MEDIA 공식 웹사이트의 방문 및 이용에 적용됩니다.", sections: [["약관 동의", "웹사이트를 이용하면 본 약관에 동의한 것으로 간주됩니다. 동의하지 않으면 이용을 중단해 주세요."], ["허용된 이용", "합법적인 정보 확인과 비즈니스 커뮤니케이션 목적으로 웹사이트를 이용할 수 있으며, 운영·보안·가용성을 방해해서는 안 됩니다."], ["회사 정보", `본 웹사이트는 ${company.legalNameEn}의 공식 정보를 투명성 및 일반 참고 목적으로 제공합니다.`], ["지식재산권", "별도 안내가 없는 한 웹사이트의 텍스트, 레이아웃, 그래픽 및 기타 원본 자료는 TRIEU HY MEDIA에 귀속되거나 사용 허가를 받은 것입니다."], ["외부 링크", "외부 사이트 링크는 편의를 위해 제공되며, 당사는 해당 콘텐츠, 보안 또는 가용성을 통제하거나 보증하지 않습니다."], ["약관 변경", "웹사이트 또는 서비스 변경에 따라 약관을 업데이트할 수 있으며, 업데이트된 약관은 게시 시점부터 적용됩니다."] ] },
 } as const;
 
 const zhContent = {
@@ -394,6 +419,7 @@ export const content = {
     },
   },
   zh: zhContent,
+  ko: koContent,
 } as const;
 
 export function getContent(locale: Locale) {

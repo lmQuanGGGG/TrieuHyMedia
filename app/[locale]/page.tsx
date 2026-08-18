@@ -12,10 +12,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMetadata(
     locale,
     "",
-    locale === "en" ? "TRIEU HY MEDIA | Advertising Company in Da Nang" : locale === "zh" ? "TRIEU HY MEDIA | 岘港广告公司" : "TRIEU HY MEDIA | Công ty quảng cáo tại Đà Nẵng",
+    locale === "en" ? "TRIEU HY MEDIA | Advertising Company in Da Nang" : locale === "zh" ? "TRIEU HY MEDIA | 岘港广告公司" : locale === "ko" ? "TRIEU HY MEDIA | 다낭 광고 회사" : "TRIEU HY MEDIA | Công ty quảng cáo tại Đà Nẵng",
     locale === "en"
       ? "TRIEU HY MEDIA is an advertising company in Da Nang, Vietnam, providing brand communication, digital product and workspace operations."
-      : locale === "zh" ? "TRIEU HY MEDIA 是一家位于越南岘港的广告公司，提供品牌传播、数字产品与工作空间运营服务。" : "TRIEU HY MEDIA là công ty quảng cáo tại Đà Nẵng, cung cấp giải pháp truyền thông thương hiệu, sản phẩm số và vận hành không gian làm việc.",
+      : locale === "zh" ? "TRIEU HY MEDIA 是一家位于越南岘港的广告公司，提供品牌传播、数字产品与工作空间运营服务。" : locale === "ko" ? "TRIEU HY MEDIA는 베트남 다낭에 기반을 둔 광고 회사로 브랜드 커뮤니케이션, 디지털 제품, 워크스페이스 운영 서비스를 제공합니다." : "TRIEU HY MEDIA là công ty quảng cáo tại Đà Nẵng, cung cấp giải pháp truyền thông thương hiệu, sản phẩm số và vận hành không gian làm việc.",
   );
 }
 
@@ -55,7 +55,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div>
             <p className="body-large">{t.home.hyGarden.description}</p>
             <p className="garden-note">{t.home.hyGarden.note}</p>
-            <Link className="button-primary garden-cta" href={`/${locale}/hy-garden`}>{t.home.hyGarden.cta} <span aria-hidden="true">↗</span></Link>
+            <Link className="button-primary garden-cta" href={`/${locale}/hy-garden`}>{t.home.hyGarden.cta}</Link>
           </div>
         </div>
         <div className="site-container garden-gallery">

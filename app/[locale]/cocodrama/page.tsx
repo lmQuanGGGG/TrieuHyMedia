@@ -12,10 +12,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMetadata(
     locale,
     "/cocodrama",
-    locale === "en" ? "CocoDrama | Short-Form Streaming by TRIEU HY MEDIA" : locale === "zh" ? "CocoDrama | TRIEU HY MEDIA 短剧应用" : "CocoDrama | Ứng dụng phim ngắn của TRIEU HY MEDIA",
+    locale === "en" ? "CocoDrama | Short-Form Streaming by TRIEU HY MEDIA" : locale === "zh" ? "CocoDrama | TRIEU HY MEDIA 短剧应用" : locale === "ko" ? "CocoDrama | TRIEU HY MEDIA의 숏폼 스트리밍" : "CocoDrama | Ứng dụng phim ngắn của TRIEU HY MEDIA",
     locale === "en"
       ? "CocoDrama is a localized short-form streaming application for Vietnam, Thailand, Indonesia and Malaysia."
-      : locale === "zh" ? "CocoDrama 是一款面向越南、泰国、印度尼西亚和马来西亚进行本地化的短剧应用。" : "CocoDrama là ứng dụng phim ngắn được bản địa hóa cho Việt Nam, Thái Lan, Indonesia và Malaysia.",
+      : locale === "zh" ? "CocoDrama 是一款面向越南、泰国、印度尼西亚和马来西亚进行本地化的短剧应用。" : locale === "ko" ? "CocoDrama는 베트남, 태국, 인도네시아, 말레이시아를 위해 현지화한 숏폼 드라마 애플리케이션입니다." : "CocoDrama là ứng dụng phim ngắn được bản địa hóa cho Việt Nam, Thái Lan, Indonesia và Malaysia.",
   );
 }
 
@@ -68,8 +68,8 @@ export default async function CocodramaPage({ params }: { params: Promise<{ loca
         <div className="site-container coco-localization-grid">
           <div><h2 className="section-title">{t.localizationTitle}</h2><p>{t.localizationIntro}</p></div>
           <div className="coco-language-list">
-            <div><span>{locale === "en" ? "Languages" : locale === "zh" ? "语言" : "Ngôn ngữ"}</span>{t.languages.map((language) => <strong key={language}>{language}</strong>)}</div>
-            <div><span>{locale === "en" ? "Markets" : locale === "zh" ? "市场" : "Thị trường"}</span>{t.markets.map((market) => <strong key={market}>{market}</strong>)}</div>
+            <div><span>{locale === "en" ? "Languages" : locale === "zh" ? "语言" : locale === "ko" ? "언어" : "Ngôn ngữ"}</span>{t.languages.map((language) => <strong key={language}>{language}</strong>)}</div>
+            <div><span>{locale === "en" ? "Markets" : locale === "zh" ? "市场" : locale === "ko" ? "시장" : "Thị trường"}</span>{t.markets.map((market) => <strong key={market}>{market}</strong>)}</div>
           </div>
         </div>
       </section>
