@@ -6,7 +6,7 @@ import { OrderWebview } from "@/src/components/hy-garden/OrderWebview";
 import { isLocale, type Locale } from "@/src/content/site";
 import { pageMetadata } from "@/src/lib/metadata";
 
-type Translated = Record<Locale, string>;
+type Translated = { en: string; vi: string; zh: string; ko?: string };
 type MenuItem = { code: string; price: string; name: Translated };
 type MenuGroup = { id: string; title: Translated; items: MenuItem[] };
 
@@ -69,6 +69,7 @@ const copy = {
   vi: { eyebrow: "Coffee & Workspace", title: "Một khoảng vườn cho cà phê, công việc và những cuộc gặp gỡ đẹp.", intro: "Hỷ Garden là không gian cà phê chậm rãi, thoáng đãng - nơi bạn có thể tập trung làm việc, hẹn gặp bạn bè hoặc chỉ đơn giản là dành một buổi sáng cho mình.", menu: "Thực đơn", menuIntro: "Những món quen thuộc được làm chỉn chu, từ cà phê truyền thống đến trà trái cây và cà phê thủ công.", featured: "Gợi ý từ Hỷ Garden", address: "15 Trung Lương 16", hours: "Mở cửa mỗi ngày · 07:00–21:00", call: "Gọi đặt chỗ", explore: "Xem toàn bộ menu", note: "Giá đã niêm yết theo thực đơn tại quán.", contact: "Liên hệ" },
   en: { eyebrow: "Coffee & Workspace", title: "A garden setting for coffee, focused work and beautiful conversations.", intro: "Hy Garden is an unhurried coffee space for productive work, time with friends, and a gentle morning to yourself.", menu: "Menu", menuIntro: "Familiar favourites, carefully prepared — from Vietnamese coffee to fruit tea and hand-brewed coffee.", featured: "Hy Garden favourites", address: "15 Trung Luong 16", hours: "Open daily · 07:00–21:00", call: "Call to reserve", explore: "View the full menu", note: "Prices follow the menu displayed at the café.", contact: "Contact" },
   zh: { eyebrow: "咖啡与工作空间", title: "一处适合咖啡、专注工作与美好相聚的花园空间。", intro: "Hỷ Garden 是一个从容舒适的咖啡空间，适合专注工作、与朋友相聚，或享受属于自己的清晨。", menu: "菜单", menuIntro: "从越南咖啡到水果茶与手冲咖啡，熟悉的风味都经过细心准备。", featured: "Hỷ Garden 推荐", address: "15 Trung Luong 16", hours: "每日营业 · 07:00–21:00", call: "致电预订", explore: "查看完整菜单", note: "价格以店内菜单为准。", contact: "联系我们" },
+  ko: { eyebrow: "커피 & 워크스페이스", title: "커피와 집중, 그리고 좋은 대화를 위한 정원 같은 공간.", intro: "Hỷ Garden은 여유롭고 편안한 카페 공간입니다. 집중해서 일하고, 친구를 만나고, 나만의 아침을 보내기에 좋습니다.", menu: "메뉴", menuIntro: "베트남 커피부터 과일차와 핸드드립 커피까지, 익숙한 메뉴를 정성껏 준비했습니다.", featured: "Hỷ Garden 추천", address: "15 Trung Luong 16", hours: "매일 운영 · 07:00–21:00", call: "예약 전화", explore: "전체 메뉴 보기", note: "가격은 매장 메뉴 기준입니다.", contact: "문의하기" },
 } as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -86,7 +87,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title,
       description,
       url: `https://trieuhymedia.net/${locale}/hy-garden`,
-      locale: locale === "vi" ? "vi_VN" : locale === "zh" ? "zh_CN" : "en_US",
+      locale: locale === "vi" ? "vi_VN" : locale === "zh" ? "zh_CN" : locale === "ko" ? "ko_KR" : "en_US",
       images: [{ url: "/hy-garden/og.jpg", width: 1200, height: 630, alt: "Hỷ Garden — Coffee & Workspace" }],
     },
     twitter: { card: "summary_large_image", title, description, images: ["/hy-garden/og.jpg"] },
@@ -98,6 +99,7 @@ export default async function HyGardenPage({ params }: { params: Promise<{ local
   if (!isLocale(rawLocale)) notFound();
   const locale: Locale = rawLocale;
   const t = copy[locale];
+  const translate = (value: Translated) => value[locale] ?? value.en;
   return <>
     <link rel="preconnect" href="https://shopeefood.vn" />
     <link rel="dns-prefetch" href="https://shopeefood.vn" />
@@ -107,7 +109,7 @@ export default async function HyGardenPage({ params }: { params: Promise<{ local
         <figure className="hy-hero-image"><video autoPlay muted loop playsInline preload="metadata" poster="/api/telegram-file/BQACAgUAAxkDAAIRAWqDDgmr1EAirjVrYIPFXGhbW-hLAAJyIQACA5wZVNJt4CJY1URdPQQ"><source src="/api/telegram-file/BAACAgUAAxkDAAIRSWqDK6mXeV_nWpJH5ljIIZrSdZBbAAL1IQACA5wZVBwO8cKivTSCPQQ" type="video/mp4" /><source src="/hy-garden/hero-video.mp4" type="video/mp4" /></video></figure>
       </div>
     </section>
-    <section className="hy-menu section-space" id="menu"><div className="site-container"><div className="hy-menu-intro"><span className="eyebrow">{t.menu}</span><h2>{t.menuIntro}</h2></div><div className="hy-menu-grid">{menu.map((group) => <section className="hy-menu-group" key={group.id}><h3>{group.title[locale]}</h3><ul>{group.items.map((item, index) => <li key={item.code}><MenuCard code={item.code} name={item.name[locale]} price={item.price} image={menuImages[item.code]} index={index} /></li>)}</ul></section>)}</div><p className="hy-menu-note">{t.note}</p></div></section>
+    <section className="hy-menu section-space" id="menu"><div className="site-container"><div className="hy-menu-intro"><span className="eyebrow">{t.menu}</span><h2>{t.menuIntro}</h2></div><div className="hy-menu-grid">{menu.map((group) => <section className="hy-menu-group" key={group.id}><h3>{translate(group.title)}</h3><ul>{group.items.map((item, index) => <li key={item.code}><MenuCard code={item.code} name={translate(item.name)} price={item.price} image={menuImages[item.code]} index={index} /></li>)}</ul></section>)}</div><p className="hy-menu-note">{t.note}</p></div></section>
     <OrderWebview locale={locale} />
     <section className="hy-visit"><div className="site-container hy-visit-inner"><div><span className="eyebrow">Hỷ Garden</span><h2>Where ideas bloom.</h2></div><div className="hy-visit-details"><p>{t.address}<br />{t.hours}</p><a href="tel:0399219143">0399 219 143</a><Link href={`/${locale}/contact`}>{t.contact} <span aria-hidden="true">↗</span></Link></div></div></section>
   </>;
