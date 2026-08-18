@@ -12,6 +12,7 @@ type Props = {
     home: string;
     about: string;
     services: string;
+    garden: string;
     cocodrama: string;
     contact: string;
     contactUs: string;
@@ -46,6 +47,7 @@ export function Header({ locale, nav }: Props) {
     [nav.home, `/${locale}`],
     [nav.about, `/${locale}#about`],
     [nav.services, `/${locale}/services`],
+    [nav.garden, `/${locale}/hy-garden`],
     [nav.cocodrama, `/${locale}/cocodrama`],
   ] as const;
 

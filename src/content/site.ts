@@ -9,7 +9,7 @@ export function isLocale(value: string): value is Locale {
 
 const shared = {
   en: {
-    nav: { home: "Home", about: "About", services: "Services", cocodrama: "CocoDrama", contact: "Contact", contactUs: "Contact us", menu: "Menu", close: "Close" },
+    nav: { home: "Home", about: "About", services: "Services", garden: "Hy Garden", cocodrama: "CocoDrama", contact: "Contact", contactUs: "Contact us", menu: "Menu", close: "Close" },
     footer: { company: "Company", legal: "Legal", rights: "All rights reserved." },
     labels: {
       legalName: "Legal name",
@@ -28,7 +28,7 @@ const shared = {
     },
   },
   vi: {
-    nav: { home: "Trang chủ", about: "Giới thiệu", services: "Dịch vụ", cocodrama: "CocoDrama", contact: "Liên hệ", contactUs: "Liên hệ", menu: "Menu", close: "Đóng" },
+    nav: { home: "Trang chủ", about: "Giới thiệu", services: "Dịch vụ", garden: "Hỷ Garden", cocodrama: "CocoDrama", contact: "Liên hệ", contactUs: "Liên hệ", menu: "Menu", close: "Đóng" },
     footer: { company: "Doanh nghiệp", legal: "Pháp lý", rights: "Bảo lưu mọi quyền." },
     labels: {
       legalName: "Tên pháp nhân",
@@ -47,7 +47,7 @@ const shared = {
     },
   },
   zh: {
-    nav: { home: "首页", about: "关于我们", services: "业务服务", cocodrama: "CocoDrama", contact: "联系我们", contactUs: "联系我们", menu: "菜单", close: "关闭" },
+    nav: { home: "首页", about: "关于我们", services: "业务服务", garden: "Hỷ Garden", cocodrama: "CocoDrama", contact: "联系我们", contactUs: "联系我们", menu: "菜单", close: "关闭" },
     footer: { company: "公司", legal: "法律信息", rights: "版权所有。" },
     labels: {
       legalName: "法定名称",
