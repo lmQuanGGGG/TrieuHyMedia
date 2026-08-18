@@ -31,6 +31,10 @@ export function Header({ locale, nav }: Props) {
     ["zh", "中文 · 简体中文"],
   ] as const;
   const localeHref = (target: string) => pathname.replace(/^\/(en|vi|zh)/, `/${target}`);
+  const isActive = (href: string) => {
+    const target = href.split("#")[0];
+    return !href.includes("#") && pathname === target;
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -58,7 +62,7 @@ export function Header({ locale, nav }: Props) {
           <Image className="brand-logo-full" src="/logos/logo4.png" alt="TRIỆU HỶ MEDIA" width={1677} height={938} priority unoptimized />
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {links.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
+          {links.map(([label, href]) => <Link key={href} href={href} className={`nav-link${isActive(href) ? " is-active" : ""}`} aria-current={isActive(href) ? "page" : undefined} onClick={() => setOpen(false)}>{label}</Link>)}
           <div className="language-switch" aria-label="Language selection">
             {localeOptions.map(([code]) => code === locale
               ? <span key={code} aria-current="page">{code === "zh" ? "中文" : code.toUpperCase()}</span>
@@ -78,7 +82,7 @@ export function Header({ locale, nav }: Props) {
       </div>
       {open && (
         <nav id="mobile-navigation" className="mobile-nav site-container" aria-label="Mobile navigation">
-          {links.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
+          {links.map(([label, href]) => <Link key={href} href={href} className={isActive(href) ? "is-active" : undefined} aria-current={isActive(href) ? "page" : undefined} onClick={() => setOpen(false)}>{label}</Link>)}
           <div className="mobile-language-switch" aria-label="Language selection">
             {localeOptions.map(([code, label]) => code === locale
               ? <span key={code} aria-current="page">{label}</span>

@@ -51,7 +51,7 @@ export default async function LocaleLayout({
     <>
       <a className="skip-link" href="#main-content">{locale === "en" ? "Skip to content" : locale === "zh" ? "跳至内容" : "Chuyển đến nội dung"}</a>
       <Header locale={locale} nav={t.nav} />
-      <main id="main-content">{children}</main>
+      <main id="main-content" className={`locale--${locale}`}>{children}</main>
       <Footer locale={locale} />
       <MotionEffects />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} />
