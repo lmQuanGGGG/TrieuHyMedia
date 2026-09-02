@@ -104,7 +104,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div>
             <span className="eyebrow">{t.workshopPage.eyebrow}</span>
             <div className="workshop-brand-line">
-              <span>{t.workshopPage.collaboration ?? "FDV × TRIỆU HỶ | COCO DRAMA"}</span>
+              <span>{t.workshopPage.collaboration ?? "VU LEE × TRIỆU HỶ | COCO DRAMA"}</span>
             </div>
             <h2 className="section-title">{t.workshopPage.title}</h2>
           </div>
@@ -136,7 +136,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               height={800}
               unoptimized
             />
-            <figcaption>Diễn giả Vu Lee — COO FDV Việt Nam · AI Film Director chia sẻ tại Hội thảo</figcaption>
+            <figcaption>Diễn giả Vu Lee — AI Film Director chia sẻ tại Hội thảo</figcaption>
           </figure>
           <figure className="garden-photo" data-tilt>
             <Image

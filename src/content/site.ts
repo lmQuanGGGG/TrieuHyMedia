@@ -89,7 +89,7 @@ const koContent = {
   servicesPage: { eyebrow: "서비스", title: "서비스와 운영 분야", intro: "TRIEU HY MEDIA는 광고·커뮤니케이션 지원, CocoDrama 디지털 제품, Hỷ Garden 커피 워크스페이스 운영을 함께 전개합니다.", scope: "지원 범위", process: "기본 프로세스", discuss: "프로젝트 상담", visualTitle: "커뮤니케이션 서비스부터 디지털 제품과 공유 공간까지", visualLabels: ["창의적 기획과 방향 설정", "CocoDrama를 통한 디지털 제품 커뮤니케이션"] },
   workshopPage: {
     eyebrow: "속성 전문 과정",
-    collaboration: "FDV × TRIỆU HỶ | COCO DRAMA",
+    collaboration: "VU LEE × TRIỆU HỶ | COCO DRAMA",
     title: "15회차 AI 영화 제작 로드맵",
     headline: "기획부터 완성까지 — 15회 실전 세션으로 압축된 AI 영화 & 애니메이션 제작 워크플로우",
     welcome: "전문 AI 영화 제작 과정에 오신 것을 환영합니다!",
@@ -97,7 +97,7 @@ const koContent = {
     instructors: [
       {
         name: "VU LEE",
-        title: "COO, FDV Vietnam · AI Film Director",
+        title: "AI Film Director",
         image: "/workshop/vulee-speaker.jpg",
         bio: "GenAI, Veo 3, Seedance 2.0 및 시네마틱 파이프라인을 상업 영화 및 단편 애니메이션 제작에 도입한 선도적인 전문가.",
       },
@@ -254,7 +254,7 @@ const zhContent = {
   },
   workshopPage: {
     eyebrow: "特训专业课程",
-    collaboration: "FDV × TRIỆU HỶ | COCO DRAMA",
+    collaboration: "VU LEE × TRIỆU HỶ | COCO DRAMA",
     title: "15 节 AI 电影全流程实战课程",
     headline: "从剧本到成片 — AI 影视与动画制作全流程浓缩于 15 节实战课程",
     welcome: "欢迎参加专业 AI 电影制作特训营！",
@@ -262,7 +262,7 @@ const zhContent = {
     instructors: [
       {
         name: "VU LEE",
-        title: "COO, FDV 越南 · AI 电影导演",
+        title: "AI 电影导演",
         image: "/workshop/vulee-speaker.jpg",
         bio: "将 GenAI、Veo 3、Seedance 2.0 及电影级工业管线引入商业影视与动画短剧制作的领军专家。",
       },
@@ -458,7 +458,7 @@ export const content = {
     },
     workshopPage: {
       eyebrow: "Intensive Professional Program",
-      collaboration: "FDV × TRIỆU HỶ | COCO DRAMA",
+      collaboration: "VU LEE × TRIỆU HỶ | COCO DRAMA",
       title: "15-Session AI Film Production Masterclass",
       headline: "From Script to Screen — A complete studio-grade AI filmmaking and animation pipeline in 15 hands-on sessions",
       welcome: "Welcome to the Professional AI Filmmaking Program!",
@@ -466,7 +466,7 @@ export const content = {
       instructors: [
         {
           name: "VU LEE",
-          title: "COO, FDV Vietnam · AI Film Director",
+          title: "AI Film Director",
           image: "/workshop/vulee-speaker.jpg",
           bio: "Pioneering expert applying GenAI, Veo 3, Seedance 2.0, and cinematic pipelines to commercial film and animated short drama production.",
         },
@@ -660,7 +660,7 @@ export const content = {
     },
     workshopPage: {
       eyebrow: "Chương trình Cấp tốc Chuyên sâu",
-      collaboration: "FDV × TRIỆU HỶ | COCO DRAMA",
+      collaboration: "VU LEE × TRIỆU HỶ | COCO DRAMA",
       title: "Lộ Trình 15 Buổi Sản Xuất Phim AI",
       headline: "Từ kịch bản đến thành phẩm — quy trình sản xuất phim và hoạt hình bằng AI nén gọn trong 15 buổi thực chiến",
       welcome: "Chào mừng bạn đến với Khóa đào tạo Sản xuất Phim AI Chuyên nghiệp!",
@@ -668,7 +668,7 @@ export const content = {
       instructors: [
         {
           name: "VU LEE",
-          title: "COO, FDV Việt Nam · AI Film Director",
+          title: "AI Film Director · Đạo diễn Phim AI",
           image: "/workshop/vulee-speaker.jpg",
           bio: "Chuyên gia tiên phong trong việc ứng dụng công nghệ GenAI, Veo 3, Seedance 2.0 và quy trình điện ảnh vào sản xuất phim thương mại, phim hoạt hình và phim ngắn tại Việt Nam.",
         },

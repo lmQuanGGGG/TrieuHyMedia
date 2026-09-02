@@ -2533,79 +2533,145 @@ details p {
    ============================================================ */
 
 .workshop-hero-section {
-  padding: clamp(70px, 8vw, 115px) 0 clamp(50px, 6vw, 85px);
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  overflow: hidden;
+  padding-top: 78px;
+  padding-inline: clamp(24px, 4.5vw, 64px);
+  background: radial-gradient(1200px circle at 85% 20%, rgba(245, 243, 238, 0.95), var(--background) 70%);
+}
+
+.workshop-hero-section::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(242, 240, 234, 0.25) 100%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .workshop-hero-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
+  min-height: calc(100svh - 78px);
   grid-template-columns: minmax(360px, 1.05fr) minmax(420px, 0.95fr);
   align-items: center;
-  gap: clamp(45px, 6vw, 90px);
+  gap: clamp(40px, 5.5vw, 85px);
+  padding-block: clamp(24px, 4vh, 48px);
 }
 
 .workshop-hero-copy {
-  max-width: 680px;
+  max-width: 720px;
+}
+
+.workshop-hero-copy .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(0.84rem, 1vw, 0.95rem);
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.workshop-hero-copy .eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 26px;
+  height: 1.5px;
+  background: currentColor;
 }
 
 .workshop-hero-title {
-  margin: 28px 0 0;
+  max-width: 740px;
+  margin: 18px 0 0;
   font-family: inherit;
-  font-size: clamp(3.2rem, 4.8vw, 5.2rem);
+  font-size: clamp(3.2rem, 5vw, 5.5rem);
   font-weight: 520;
-  letter-spacing: -0.02em;
-  line-height: 0.98;
+  letter-spacing: -0.025em;
+  line-height: 0.96;
   color: var(--foreground);
 }
 
 .workshop-hero-intro {
-  max-width: 660px;
-  margin: 32px 0 0;
+  max-width: 680px;
+  margin: 26px 0 0;
   color: var(--muted);
-  font-size: clamp(1.12rem, 1.55vw, 1.32rem);
-  line-height: 1.65;
+  font-size: clamp(1.15rem, 1.6vw, 1.38rem);
+  line-height: 1.62;
+}
+
+.workshop-hero-copy .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.workshop-hero-copy .hero-actions .button-primary,
+.workshop-hero-copy .hero-actions .button-secondary {
+  padding: 14px 28px;
+  font-size: 0.98rem;
+  font-weight: 550;
 }
 
 .workshop-hero-media-wrap {
   position: relative;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .workshop-cinematic-frame {
   position: relative;
-  aspect-ratio: 16 / 11;
   width: 100%;
+  aspect-ratio: 4 / 3.1;
+  min-height: 480px;
+  max-height: min(600px, calc(100svh - 140px));
   margin: 0;
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.08), 0 4px 14px -2px rgba(0, 0, 0, 0.03);
-  background: #e8e6df;
+  box-shadow: 0 28px 64px -14px rgba(0, 0, 0, 0.16), 0 8px 24px -4px rgba(0, 0, 0, 0.06);
+  background: #111111;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.workshop-cinematic-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 36px 72px -16px rgba(0, 0, 0, 0.22), 0 10px 28px -4px rgba(0, 0, 0, 0.08);
 }
 
 .workshop-cinematic-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 25%;
   display: block;
 }
 
 .workshop-speaker-pill {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
+  bottom: 20px;
+  left: 20px;
   display: inline-flex;
   flex-direction: column;
-  padding: 8px 16px;
+  padding: 10px 18px;
   border-radius: 12px;
-  background: rgba(17, 17, 17, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(17, 17, 17, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: #ffffff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .speaker-name {
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -2613,29 +2679,51 @@ details p {
 }
 
 .speaker-role {
-  font-size: 0.74rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 450;
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
-/* Facts Bar dạng Grid cân xứng — thẳng mép trái tuyệt đối */
+/* Facts Bar dạng Grid cân xứng — số to & nhãn rõ nét chuẩn Coco & Hy Garden */
 .workshop-facts-bar,
 .workshop-fact-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 28px 0 0;
-  margin: 36px 0 0;
+  padding: 30px 0 0;
+  margin: 32px 0 0;
   list-style: none;
   border-top: 1px solid var(--border);
-  gap: 16px;
+  gap: 20px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
+  .workshop-hero-section {
+    min-height: auto;
+    padding-top: 86px;
+    padding-bottom: 48px;
+    display: block;
+  }
+
+  .workshop-hero-grid {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-block: 16px 24px;
+  }
+
+  .workshop-cinematic-frame {
+    aspect-ratio: 16 / 11;
+    min-height: auto;
+    max-height: 420px;
+  }
+
   .workshop-facts-bar,
   .workshop-fact-list {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px 24px;
+    margin-top: 28px;
+    padding-top: 22px;
   }
 }
 
@@ -2650,23 +2738,26 @@ details p {
   text-align: left;
 }
 
-.workshop-facts-bar strong {
-  font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+.workshop-facts-bar strong,
+.workshop-fact-list strong {
+  font-size: clamp(1.85rem, 2.7vw, 2.5rem);
   font-weight: 550;
   color: var(--foreground);
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   display: block;
 }
 
-.workshop-facts-bar span {
-  font-size: 0.78rem;
+.workshop-facts-bar span,
+.workshop-fact-list span {
+  font-size: clamp(0.8rem, 1vw, 0.88rem);
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-weight: 580;
   line-height: 1.35;
   display: block;
+  margin-top: 6px;
 }
 
 /* Section trên trang chủ */
@@ -2699,15 +2790,9 @@ details p {
 
 .workshop-speaker-card {
   padding: 32px;
-  background: #ffffff;
   border-radius: 18px;
-  border: none;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
-  transition: background 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .speaker-card-header {
@@ -2796,15 +2881,9 @@ details p {
 
 .editorial-session-item {
   padding: 24px;
-  background: #ffffff;
   border-radius: 16px;
-  border: none;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
-  transition: background 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .session-meta-row {
@@ -3028,10 +3107,7 @@ details p {
               box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Cards cùng màu nền với trang, có đổ bóng mờ, không viền — khi hover chuyển sang nền trắng */
-.editorial-session-item,
-.workshop-speaker-card,
-.career-editorial-card,
+/* Cards tĩnh hoặc khối phụ */
 .genres-editorial-box,
 .venue-item-box,
 .workshop-native-card,
@@ -3045,9 +3121,6 @@ details p {
 }
 
 @media (hover: hover) {
-  .editorial-session-item:hover,
-  .workshop-speaker-card:hover,
-  .career-editorial-card:hover,
   .genres-editorial-box:hover,
   .venue-item-box:hover,
   .workshop-native-card:hover,
@@ -3055,6 +3128,138 @@ details p {
     background: #ffffff;
     transform: translateY(-4px);
     box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.03);
+  }
+}
+
+/* ============================================================
+   HIỆU ỨNG XÒE BÀI (CARD DEALING / FAN-OUT EFFECT) - CHUẨN HỶ GARDEN
+   ============================================================ */
+
+.workshop-deal-grid {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Base style cho các card trước khi xòe: tụ lại ở tâm và xoay nhẹ */
+.workshop-speaker-card,
+.editorial-session-item,
+.career-editorial-card {
+  --card-y: 28px;
+  --deal-x: 0%;
+  --deal-y: 0%;
+  --deal-angle: 0deg;
+  opacity: 0.16;
+  background: var(--background);
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+  transform: translate(var(--deal-x), var(--deal-y)) translateY(var(--card-y)) rotate(var(--deal-angle)) scale(0.9);
+  transition: opacity 0.4s ease,
+              transform 1.15s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+              box-shadow 0.28s ease,
+              background 0.28s ease;
+  will-change: transform, opacity;
+}
+
+/* Speaker cards (2 thẻ: xòe cánh đôi sang 2 bên) */
+.workshop-speakers-grid > .workshop-speaker-card:nth-child(1) {
+  --deal-x: 52%;
+  --deal-angle: -5deg;
+}
+.workshop-speakers-grid > .workshop-speaker-card:nth-child(2) {
+  --deal-x: -52%;
+  --deal-angle: 5deg;
+}
+
+/* Career editorial cards (3 thẻ: xòe cánh quạt 3 lá từ tâm) */
+.career-editorial-grid > .career-editorial-card:nth-child(1) {
+  --deal-x: 105%;
+  --deal-angle: -7deg;
+}
+.career-editorial-grid > .career-editorial-card:nth-child(2) {
+  --deal-x: 0%;
+  --deal-angle: 0deg;
+}
+.career-editorial-grid > .career-editorial-card:nth-child(3) {
+  --deal-x: -105%;
+  --deal-angle: 7deg;
+}
+
+/* Editorial session items (Hàng 4 thẻ: xòe bộ bài 4 lá chuẩn Hy Garden) */
+.editorial-sessions-grid > .editorial-session-item:nth-child(4n + 1) {
+  --deal-x: 150%;
+  --deal-angle: -8deg;
+}
+.editorial-sessions-grid > .editorial-session-item:nth-child(4n + 2) {
+  --deal-x: 50%;
+  --deal-angle: -3deg;
+}
+.editorial-sessions-grid > .editorial-session-item:nth-child(4n + 3) {
+  --deal-x: -50%;
+  --deal-angle: 3deg;
+}
+.editorial-sessions-grid > .editorial-session-item:nth-child(4n + 4),
+.editorial-sessions-grid > .editorial-session-item:nth-child(4n) {
+  --deal-x: -150%;
+  --deal-angle: 8deg;
+}
+
+/* Trường hợp hàng 3 thẻ (như Phase 4) */
+.editorial-sessions-grid:has(> :last-child:nth-child(3)) > .editorial-session-item:nth-child(1) {
+  --deal-x: 105%;
+  --deal-angle: -6deg;
+}
+.editorial-sessions-grid:has(> :last-child:nth-child(3)) > .editorial-session-item:nth-child(2) {
+  --deal-x: 0%;
+  --deal-angle: 0deg;
+}
+.editorial-sessions-grid:has(> :last-child:nth-child(3)) > .editorial-session-item:nth-child(3) {
+  --deal-x: -105%;
+  --deal-angle: 6deg;
+}
+
+/* Khi đã xòe ra (kích hoạt is-visible) */
+.workshop-speaker-card.is-visible,
+.editorial-session-item.is-visible,
+.career-editorial-card.is-visible {
+  --card-y: 0px;
+  --deal-x: 0%;
+  --deal-y: 0%;
+  --deal-angle: 0deg;
+  opacity: 1;
+  transform: translate(0, 0) translateY(0) rotate(0deg) scale(1);
+}
+
+/* Hover phản hồi nhanh, mượt mà khi đã ở trạng thái ổn định */
+@media (hover: hover) {
+  .workshop-speaker-card.is-visible:hover,
+  .editorial-session-item.is-visible:hover,
+  .career-editorial-card.is-visible:hover {
+    background: #ffffff;
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 18px 40px -8px rgba(0, 0, 0, 0.09), 0 4px 14px rgba(0, 0, 0, 0.03);
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 5;
+  }
+}
+
+/* Tablet & Mobile (<= 960px): chuyển sang trượt dọc mềm mại, triệt tiêu xòe ngang tránh tràn lề */
+@media (max-width: 960px) {
+  .workshop-speaker-card,
+  .editorial-session-item,
+  .career-editorial-card {
+    --deal-x: 0% !important;
+    --deal-y: 0% !important;
+    --deal-angle: 0deg !important;
+    --card-y: 20px;
+    transform: translateY(var(--card-y)) scale(0.96);
+  }
+
+  .workshop-speaker-card.is-visible,
+  .editorial-session-item.is-visible,
+  .career-editorial-card.is-visible {
+    transform: translateY(0) scale(1);
   }
 }
 

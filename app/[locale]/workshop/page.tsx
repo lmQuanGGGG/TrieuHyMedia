@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { WorkshopCardDeal } from "@/src/components/workshop/WorkshopCardDeal";
 import { WorkshopRegisterForm } from "@/src/components/workshop/WorkshopRegisterForm";
 import { company } from "@/src/config/company";
 import { getContent, isLocale, type Locale } from "@/src/content/site";
@@ -183,7 +184,7 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
       <section className="page-hero page-hero--visual workshop-hero-section">
         <div className="site-container workshop-hero-grid">
           <div className="workshop-hero-copy">
-            <span className="eyebrow">{t.collaboration ?? "FDV × TRIỆU HỶ | COCO DRAMA"}</span>
+            <span className="eyebrow">{t.collaboration ?? "VU LEE × TRIỆU HỶ | COCO DRAMA"}</span>
             <h1 className="workshop-hero-title">{t.title}</h1>
             <p className="workshop-hero-intro">{t.headline}</p>
 
@@ -239,7 +240,7 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
             <p>{i18n.instructorSubtitle}</p>
           </div>
 
-          <div className="workshop-speakers-grid" style={{ marginTop: "36px" }}>
+          <WorkshopCardDeal className="workshop-speakers-grid" style={{ marginTop: "36px" }}>
             {instructors.map((inst, idx) => (
               <article key={inst.name} className="workshop-speaker-card">
                 <div className="speaker-card-header">
@@ -252,7 +253,7 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
                 <p className="speaker-card-bio">{inst.bio}</p>
               </article>
             ))}
-          </div>
+          </WorkshopCardDeal>
 
           <div className="workshop-event-gallery" style={{ marginTop: "32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
             <figure className="garden-photo" data-tilt style={{ margin: 0 }}>
@@ -286,7 +287,7 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
                   <h3>{phase.phaseTitle}</h3>
                 </div>
 
-                <div className="editorial-sessions-grid">
+                <WorkshopCardDeal className="editorial-sessions-grid">
                   {phase.sessions.map((s) => (
                     <article key={s.sessionNumber} className="editorial-session-item">
                       <div className="session-meta-row">
@@ -310,7 +311,7 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
                       </div>
                     </article>
                   ))}
-                </div>
+                </WorkshopCardDeal>
               </div>
             ))}
           </div>
@@ -328,7 +329,7 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
             <p>{i18n.careerSubtitle}</p>
           </div>
 
-          <div className="career-editorial-grid" style={{ marginTop: "36px" }}>
+          <WorkshopCardDeal className="career-editorial-grid" style={{ marginTop: "36px" }}>
             {careerOptions.map((opt) => (
               <article key={opt.direction} className="career-editorial-card">
                 <span className="career-index">{opt.direction}</span>
@@ -340,7 +341,7 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
                 </div>
               </article>
             ))}
-          </div>
+          </WorkshopCardDeal>
 
           {/* Thể loại phim ưu tiên */}
           {filmGenres && (
