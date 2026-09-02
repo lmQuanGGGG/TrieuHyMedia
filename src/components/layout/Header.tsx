@@ -14,6 +14,7 @@ type Props = {
     services: string;
     garden: string;
     cocodrama: string;
+    workshop: string;
     contact: string;
     contactUs: string;
     menu: string;
@@ -55,6 +56,7 @@ export function Header({ locale, nav }: Props) {
     [nav.services, `/${locale}/services`],
     [nav.garden, `/${locale}/hy-garden`],
     [nav.cocodrama, `/${locale}/cocodrama`],
+    [nav.workshop, `/${locale}/workshop`],
   ] as const;
 
   return (

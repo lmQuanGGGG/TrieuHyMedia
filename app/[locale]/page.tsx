@@ -98,6 +98,59 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
+      {/* Workshop AI Highlight Banner */}
+      <section className="section-space rule workshop-preview-section">
+        <div className="site-container split-section">
+          <div>
+            <span className="eyebrow">{t.workshopPage.eyebrow}</span>
+            <div className="workshop-brand-line">
+              <span>{t.workshopPage.collaboration ?? "FDV × TRIỆU HỶ | COCO DRAMA"}</span>
+            </div>
+            <h2 className="section-title">{t.workshopPage.title}</h2>
+          </div>
+          <div>
+            <p className="body-large">{t.workshopPage.headline}</p>
+            <p className="workshop-preview-desc">{t.workshopPage.description}</p>
+            <ul className="workshop-fact-list">
+              <li>15 Buổi thực chiến</li>
+              <li>4 Giai đoạn</li>
+              <li>3 Bài thực hành</li>
+              <li>Cam kết đầu ra Coco Drama</li>
+            </ul>
+            <div className="workshop-preview-actions">
+              <Link href={`/${locale}/workshop`} className="button-primary">
+                {t.workshopPage.ctaRegister}
+              </Link>
+              <Link href={`/${locale}/workshop#curriculum`} className="button-secondary">
+                {t.workshopPage.curriculumTitle}
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="site-container workshop-preview-gallery" style={{ marginTop: "40px" }}>
+          <figure className="garden-photo garden-photo--main" data-tilt>
+            <Image
+              src="/workshop/vulee-speaker.jpg"
+              alt="Giảng viên Vu Lee — AI Film Director"
+              width={1200}
+              height={800}
+              unoptimized
+            />
+            <figcaption>Diễn giả Vu Lee — COO FDV Việt Nam · AI Film Director chia sẻ tại Hội thảo</figcaption>
+          </figure>
+          <figure className="garden-photo" data-tilt>
+            <Image
+              src="/workshop/workshop-attendees.jpg"
+              alt="Khán phòng hội thảo AI Film Production"
+              width={1000}
+              height={667}
+              unoptimized
+            />
+            <figcaption>Khán phòng hội thảo và đội ngũ chuyên gia sản xuất</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section className="section-space rule home-about-section" id="about">
         <div className="site-container split-section">
           <div><h2 className="section-title">{t.home.overviewTitle}</h2></div>

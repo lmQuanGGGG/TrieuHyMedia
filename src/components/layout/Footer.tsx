@@ -22,7 +22,9 @@ export function Footer({ locale }: { locale: Locale }) {
             <p className="footer-heading">{t.footer.company}</p>
             <Link href={`/${locale}#about`}>{t.nav.about}</Link>
             <Link href={`/${locale}/services`}>{t.nav.services}</Link>
+            <Link href={`/${locale}/hy-garden`}>{t.nav.garden}</Link>
             <Link href={`/${locale}/cocodrama`}>CocoDrama</Link>
+            <Link href={`/${locale}/workshop`}>{t.nav.workshop}</Link>
             <Link href={`/${locale}/contact`}>{t.nav.contact}</Link>
           </div>
           <div>
