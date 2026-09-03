@@ -48,9 +48,9 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
 
   const i18n = {
     vi: {
-      instructorEyebrow: "Đội ngũ Giảng viên & Diễn giả",
-      instructorTitle: "VU LEE & HOÀ NGUYỄN (Hulk Nón Lá)",
-      instructorSubtitle: "Khóa đào tạo được đồng dẫn dắt trực tiếp bởi hai chuyên gia tiên phong: Giám đốc sản xuất phim AI và Nhà sáng tạo nội dung sở hữu kênh Hulk Nón Lá triệu view.",
+      instructorEyebrow: "Nhà diễn giả & Khách mời",
+      instructorTitle: "NHÀ DIỄN GIẢ VŨ LEE & KHÁCH MỜI HÒA NGUYỄN",
+      instructorSubtitle: "Khóa học có sự đồng hành của Nhà diễn giả Vũ Lee và Khách mời Hòa Nguyễn (Hulk Nón Lá).",
       gallery1: "Hội trường hội thảo AI Film Production thực chiến",
       gallery2: "Không gian thực hành & sáng tạo tại Hỷ Garden Workspace",
       curriculumEyebrow: "Chương trình đào tạo",
@@ -222,7 +222,7 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
               />
               <div className="workshop-speaker-pill">
                 <span className="speaker-name">VU LEE × HOÀ NGUYỄN</span>
-                <span className="speaker-role">AI Film Director · Hulk Nón Lá</span>
+                <span className="speaker-role">Nhà diễn giả Vũ Lee · Khách mời Hòa Nguyễn</span>
               </div>
             </figure>
           </div>
