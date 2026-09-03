@@ -683,7 +683,7 @@ export const content = {
         { value: "15", label: "Buổi học thực chiến" },
         { value: "04", label: "Giai đoạn chuyên sâu" },
         { value: "03", label: "Bài thực hành lớn" },
-        { value: "4", label: "Cơ hội hợp tác dành cho học viên đạt yêu cầu" },
+        { value: "ĐẦU RA", label: "Cơ hội hợp tác dành cho học viên đạt yêu cầu" },
       ],
       formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdf_VxxViXIgwXOWE5V3A0rvK9lWdRPc8EI9kPf3tuoByirbg/viewform?usp=header",
       ctaRegister: "Đăng ký tham gia ngay",
