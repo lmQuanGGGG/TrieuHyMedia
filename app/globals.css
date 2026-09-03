@@ -2746,6 +2746,7 @@ details p {
   line-height: 1;
   letter-spacing: -0.025em;
   display: block;
+  white-space: nowrap;
 }
 
 .workshop-facts-bar span,
