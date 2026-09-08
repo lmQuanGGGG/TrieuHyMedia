@@ -8,14 +8,6 @@ import type { Locale } from "@/src/content/site";
 
 const platforms = [
   {
-    id: "shopee",
-    name: "ShopeeFood",
-    url: "https://shopeefood.vn/da-nang/hy-garden-coffee-wordspace.kyaxua",
-    embeddable: true,
-    mobilePreview: "/hy-garden/order-preview/shopee-mobile.png",
-    qr: "/hy-garden/order-qr/shopee.png",
-  },
-  {
     id: "grab",
     name: "GrabFood",
     url: "https://food.grab.com/vn/vi/restaurant/h%E1%BB%B7-garden-coffee-workspace-delivery/5-C8CGLLAUPA61G6",
@@ -38,6 +30,14 @@ const platforms = [
     preview: "/hy-garden/order-preview/ipos-menu.png",
     qr: "/hy-garden/order-qr/ipos.svg",
     embeddable: false,
+  },
+  {
+    id: "shopee",
+    name: "ShopeeFood",
+    url: "https://shopeefood.vn/da-nang/hy-garden-coffee-wordspace.kyaxua",
+    embeddable: true,
+    mobilePreview: "/hy-garden/order-preview/shopee-mobile.png",
+    qr: "/hy-garden/order-qr/shopee.png",
   },
 ] as const;
 
@@ -77,7 +77,7 @@ const copy = {
 type Platform = (typeof platforms)[number];
 
 export function OrderWebview({ locale }: { locale: Locale }) {
-  const [activeId, setActiveId] = useState<Platform["id"]>("shopee");
+  const [activeId, setActiveId] = useState<Platform["id"]>("grab");
   const [useDirectMobileLink, setUseDirectMobileLink] = useState(false);
   const active = platforms.find((platform) => platform.id === activeId) ?? platforms[0];
   const t = copy[locale];
