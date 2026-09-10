@@ -37,7 +37,7 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
   const locale: Locale = rawLocale;
   const t = getContent(locale).workshopPage;
 
-  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=${encodeURIComponent(t.formUrl)}&bgcolor=ffffff&color=111111&margin=10`;
+  const qrCodeUrl = "/workshop/google-form-registration-qr.png";
 
   const phases = "phases" in t ? t.phases : [];
   const careerOptions = "careerOptions" in t ? t.careerOptions : [];
