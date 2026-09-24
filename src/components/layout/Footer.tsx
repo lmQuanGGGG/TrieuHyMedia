@@ -25,6 +25,8 @@ export function Footer({ locale }: { locale: Locale }) {
             <Link href={`/${locale}/hy-garden`}>{t.nav.garden}</Link>
             <Link href={`/${locale}/cocodrama`}>CocoDrama</Link>
             <Link href={`/${locale}/workshop`}>{t.nav.workshop}</Link>
+            <Link href={`/${locale}/news`}>{locale === "vi" ? "Tin tức" : locale === "zh" ? "新闻" : locale === "ko" ? "소식" : "News"}</Link>
+            <Link href={`/${locale}/careers`}>{locale === "vi" ? "Tuyển dụng" : locale === "zh" ? "加入我们" : locale === "ko" ? "채용" : "Careers"}</Link>
             <Link href={`/${locale}/contact`}>{t.nav.contact}</Link>
           </div>
           <div>

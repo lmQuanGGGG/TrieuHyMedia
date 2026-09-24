@@ -32,6 +32,8 @@ export function Header({ locale, nav }: Props) {
     ["zh", "中文 · 简体中文"],
     ["ko", "한국어 · 한국어"],
   ] as const;
+  const newsLabel = locale === "vi" ? "Tin tức" : locale === "zh" ? "新闻" : locale === "ko" ? "소식" : "News";
+  const careersLabel = locale === "vi" ? "Tuyển dụng" : locale === "zh" ? "加入我们" : locale === "ko" ? "채용" : "Careers";
   const localeHref = (target: string) => pathname.replace(/^\/(en|vi|zh|ko)/, `/${target}`);
   const shortLocaleLabel = (code: string) => code === "zh" ? "中文" : code === "ko" ? "한국어" : code.toUpperCase();
   const isActive = (href: string) => {
@@ -57,6 +59,8 @@ export function Header({ locale, nav }: Props) {
     [nav.garden, `/${locale}/hy-garden`],
     [nav.cocodrama, `/${locale}/cocodrama`],
     [nav.workshop, `/${locale}/workshop`],
+    [newsLabel, `/${locale}/news`],
+    [careersLabel, `/${locale}/careers`],
   ] as const;
 
   return (

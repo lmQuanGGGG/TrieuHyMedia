@@ -46,11 +46,13 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
   const venues = "venues" in t ? t.venues : [];
   const instructors = "instructors" in t ? t.instructors : [];
 
+  const tuition = "tuition" in t ? t.tuition : null;
+
   const i18n = {
     vi: {
-      instructorEyebrow: "Nhà diễn giả & Khách mời",
-      instructorTitle: "NHÀ DIỄN GIẢ VŨ LEE & KHÁCH MỜI HÒA NGUYỄN",
-      instructorSubtitle: "Khóa học có sự đồng hành của Nhà diễn giả Vũ Lee và Khách mời Hòa Nguyễn (Hulk Nón Lá).",
+      instructorEyebrow: "Giảng viên & Đạo diễn",
+      instructorTitle: "ĐẠO DIỄN VŨ LEE & KHÁCH MỜI HÒA NGUYỄN",
+      instructorSubtitle: "Khóa học do Đạo diễn Vũ Lee (AI Film Director) trực tiếp giảng dạy cùng sự đồng hành của Triệu Hỷ Media và Khách mời Hòa Nguyễn (Hulk Nón Lá).",
       gallery1: "Hội trường hội thảo AI Film Production thực chiến",
       gallery2: "Không gian thực hành & sáng tạo tại Hỷ Garden Workspace",
       curriculumEyebrow: "Chương trình đào tạo",
@@ -66,17 +68,28 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
       genresModern: "Chủ đề Hiện đại & Kịch tính",
       genresCommercial: "Video Thương mại & Doanh nghiệp",
       philosophyPrefix: "Định hướng Coco Drama:",
+      pricingEyebrow: "Học Phí & Học Bổng",
+      pricingTitle: "Chính Sách Học Phí & Học Bổng Coco Drama",
+      pricingIntro: "Chính sách học phí minh bạch kết hợp chương trình học bổng Coco Drama hỗ trợ các nhà sáng tạo làm phim AI thế hệ mới.",
+      saveNote: "Ưu đãi đặc biệt giảm ngay 5.000.000đ dành cho học viên đăng ký sớm đợt khai giảng đầu tiên.",
+      scholarshipLevelLabel: "Mức hỗ trợ học bổng",
+      scholarshipPerk1Title: "Tài trợ Credit AI thực hành",
+      scholarshipPerk1Desc: "Cấp tài nguyên và credit thực hành sản xuất phim trên các nền tảng AI tân tiến (Veo 3, Seedance 2.0...).",
+      scholarshipPerk2Title: "Phát hành phim trên Coco Drama",
+      scholarshipPerk2Desc: "Sản phẩm tốt nghiệp đạt tiêu chuẩn được phát hành trực tiếp đến hàng trăm ngàn khán giả Đông Nam Á.",
+      scholarshipPerk3Title: "Cơ chế trả thù lao sản xuất",
+      scholarshipPerk3Desc: "Cơ hội tham gia sản xuất có trả phí: từ 500k/source 4 phút đến 15 triệu/bộ phim ngắn hoàn chỉnh.",
       venueEyebrow: t.venueTitle ?? "Địa điểm & Liên hệ",
       venueTitle: "Địa Điểm Đào Tạo & Liên Hệ",
       hotlineLabel: "Hotline tư vấn & hỗ trợ trực tiếp",
-      registerSubtitle: "Điền thông tin vào phiếu đăng ký để nhận tư vấn chi tiết về lịch khai giảng và học phí ưu đãi.",
+      registerSubtitle: "Điền thông tin vào phiếu đăng ký để nhận tư vấn chi tiết về lịch khai giảng và học phí ưu đãi 7 triệu.",
       qrNote: "Quét mã QR bằng camera điện thoại để mở form đăng ký di động nhanh chóng.",
-      closingTitle: "Sẵn sàng bắt đầu hành trình sản xuất phim AI cùng VuLee & Triệu Hỷ Media?",
+      closingTitle: "Sẵn sàng bắt đầu hành trình sản xuất phim AI cùng Vũ Lee & Triệu Hỷ Media?",
     },
     en: {
-      instructorEyebrow: "Instructors & Keynote Speakers",
-      instructorTitle: "VU LEE & HOÀ NGUYỄN (Hulk Nón Lá)",
-      instructorSubtitle: "The masterclass is directly led by two pioneering industry experts: an AI Film Director and the Creator behind the multi-million-view channel Hulk Nón Lá.",
+      instructorEyebrow: "Lead Instructor & Director",
+      instructorTitle: "DIRECTOR VU LEE & GUEST HOÀ NGUYỄN",
+      instructorSubtitle: "Directly led by AI Film Director Vu Lee in official partnership with Trieu Hy Media and Guest Creator Hoa Nguyen (Hulk Non La).",
       gallery1: "AI Film Production Live Studio & Conference Hall",
       gallery2: "Creative Workspace & Practice Studio at Hy Garden",
       curriculumEyebrow: "Curriculum Roadmap",
@@ -92,6 +105,17 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
       genresModern: "Modern Drama & Sci-Fi",
       genresCommercial: "Commercial & Brand Video (TVC)",
       philosophyPrefix: "Coco Drama Philosophy:",
+      pricingEyebrow: "Tuition & Scholarship",
+      pricingTitle: "Tuition Policy & Coco Drama Scholarship",
+      pricingIntro: "Transparent tuition policy combined with the Coco Drama Scholarship program empowering next-generation AI creators.",
+      saveNote: "Special early-bird discount saving 5,000,000 VND for the opening masterclass cohort.",
+      scholarshipLevelLabel: "Scholarship Support Value",
+      scholarshipPerk1Title: "Sponsored AI Studio Credits",
+      scholarshipPerk1Desc: "Access computational assets & credits for cutting-edge AI models (Veo 3, Seedance 2.0...).",
+      scholarshipPerk2Title: "Commercial Distribution on Coco Drama",
+      scholarshipPerk2Desc: "Qualifying graduation films get distributed directly across Southeast Asian streaming audiences.",
+      scholarshipPerk3Title: "Production Fee Monetization",
+      scholarshipPerk3Desc: "Paid production contracts: from 500k VND/4-min source to 15M VND for a full series.",
       venueEyebrow: t.venueTitle ?? "Venue & Inquiries",
       venueTitle: "Training Venue & Direct Contact",
       hotlineLabel: "Direct Admissions & Support Hotline",
@@ -100,9 +124,9 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
       closingTitle: "Ready to launch your studio-grade AI filmmaking journey with VuLee & Trieu Hy Media?",
     },
     zh: {
-      instructorEyebrow: "核心导师与主讲嘉宾",
-      instructorTitle: "VU LEE 与 HOÀ NGUYỄN (Hulk Nón Lá)",
-      instructorSubtitle: "本课程由两位行业先锋导师亲自带教：AI 电影导演与拥有数百万播放量的知名创作者。",
+      instructorEyebrow: "主讲导师与特邀嘉宾",
+      instructorTitle: "VU LEE 导演与 HOÀ NGUYỄN (Hulk Nón Lá)",
+      instructorSubtitle: "由 AI 电影导演 Vu Lee 亲自执教，联合 Triệu Hỷ Media 官方及特邀嘉宾 Hoà Nguyễn 倾力打造。",
       gallery1: "实战 AI 影视制作大师课现场",
       gallery2: "Hỷ Garden 线下实训与创作空间",
       curriculumEyebrow: "特训课程体系",
@@ -118,6 +142,17 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
       genresModern: "现代都市与悬疑科幻",
       genresCommercial: "商业定制与企业 TVC",
       philosophyPrefix: "Coco Drama 核心理念：",
+      pricingEyebrow: "学费与奖学金",
+      pricingTitle: "特惠学费与 Coco Drama 奖学金计划",
+      pricingIntro: "公开透明的特训学费体系，协同 Coco Drama 官方奖学金计划扶持新一代 AI 影视创作者。",
+      saveNote: "首期开班学员立减 5,000,000 越南盾特惠福利。",
+      scholarshipLevelLabel: "学费资助额度",
+      scholarshipPerk1Title: "资助实战 AI 算力额度",
+      scholarshipPerk1Desc: "提供前沿 AI 模型（Veo 3、Seedance 2.0 等）官方实操算力与制作资源。",
+      scholarshipPerk2Title: "Coco Drama 官方直发",
+      scholarshipPerk2Desc: "达到发行标准的毕业成片将直接上线 Coco Drama 平台面向东南亚海量观众播出。",
+      scholarshipPerk3Title: "商业制作付费报酬",
+      scholarshipPerk3Desc: "签约商业制作：从 500k 越盾/4分钟 source 到 1500万 越盾/部完整短剧。",
       venueEyebrow: t.venueTitle ?? "培训地点",
       venueTitle: "培训地点与联系方式",
       hotlineLabel: "招生咨询与官方热线",
@@ -127,8 +162,8 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
     },
     ko: {
       instructorEyebrow: "전문 강사진 & 디렉터",
-      instructorTitle: "VU LEE & HOÀ NGUYỄN (Hulk Nón Lá)",
-      instructorSubtitle: "AI 영화 디렉터와 수백만 뷰를 기록한 전문 크리에이터가 전 과정을 1:1로 직접 이끕니다.",
+      instructorTitle: "VU LEE 디렉터 & HOÀ NGUYỄN",
+      instructorSubtitle: "AI 영화 디렉터 Vu Lee 직강 및 Triệu Hỷ Media 공식 협력, 특별 게스트 Hoà Nguyễn 동행.",
       gallery1: "실전 AI 영화 제작 워크숍 현장",
       gallery2: "Hỷ Garden 워크스페이스 실습 공간",
       curriculumEyebrow: "커리큘럼 체계",
@@ -144,6 +179,17 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
       genresModern: "현대 드라마·미스터리",
       genresCommercial: "상업 광고 & 기업 TVC",
       philosophyPrefix: "Coco Drama 철학:",
+      pricingEyebrow: "수강료 및 장학 혜택",
+      pricingTitle: "수강료 정책 및 Coco Drama 장학 프로그램",
+      pricingIntro: "차세대 AI 영화 창작자를 위한 투명한 수강료 정책과 Coco Drama 공식 장학 지원 프로그램.",
+      saveNote: "첫 개강 기수 조기 등록 시 5,000,000 VND 즉시 할인 혜택.",
+      scholarshipLevelLabel: "장학 지원 규모",
+      scholarshipPerk1Title: "실전 AI 제작 크레딧 지원",
+      scholarshipPerk1Desc: "최신 AI 모델(Veo 3, Seedance 2.0 등) 실습용 제작 리소스 및 크레딧 지원.",
+      scholarshipPerk2Title: "Coco Drama 공식 배급",
+      scholarshipPerk2Desc: "기준을 충족한 수료작은 동남아 관객 대상 Coco Drama 플랫폼에 공식 배급.",
+      scholarshipPerk3Title: "상업 제작 유료 계약 기회",
+      scholarshipPerk3Desc: "유료 제작 기회: 4분 source당 50만 VND ~ 완편 시리즈당 1,500만 VND.",
       venueEyebrow: t.venueTitle ?? "교육 장소",
       venueTitle: "교육 장소 & 문의처",
       hotlineLabel: "입학 상담 및 공식 핫라인",
@@ -170,6 +216,17 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
     genresModern: "Hiện đại",
     genresCommercial: "Thương mại",
     philosophyPrefix: "Triết lý:",
+    pricingEyebrow: "Học Phí & Học Bổng",
+    pricingTitle: "Học Phí Ưu Đãi & Học Bổng Coco Drama",
+    pricingIntro: "Chính sách học phí và học bổng hỗ trợ học viên.",
+    saveNote: "Ưu đãi khai giảng đặc biệt",
+    scholarshipLevelLabel: "Mức hỗ trợ",
+    scholarshipPerk1Title: "Tài trợ Credit AI",
+    scholarshipPerk1Desc: "Cấp tài nguyên thực hành.",
+    scholarshipPerk2Title: "Phát hành trên Coco Drama",
+    scholarshipPerk2Desc: "Phát hành phim đến khán giả.",
+    scholarshipPerk3Title: "Thù lao sản xuất",
+    scholarshipPerk3Desc: "Hợp tác sản xuất có trả phí.",
     venueEyebrow: "Địa điểm",
     venueTitle: "Địa điểm đào tạo",
     hotlineLabel: "Hotline",
@@ -184,9 +241,22 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
       <section className="page-hero page-hero--visual workshop-hero-section">
         <div className="site-container workshop-hero-grid">
           <div className="workshop-hero-copy">
-            <span className="eyebrow">{t.collaboration ?? "VU LEE × TRIỆU HỶ | COCO DRAMA"}</span>
+            <span className="eyebrow">{t.collaboration ?? "TRIỆU HỶ MEDIA × VŨ LEE | COCO DRAMA"}</span>
             <h1 className="workshop-hero-title">{t.title}</h1>
+            {"courseSubtitle" in t && (
+              <p className="workshop-hero-course-sub">{t.courseSubtitle}</p>
+            )}
             <p className="workshop-hero-intro">{t.headline}</p>
+
+            {tuition && (
+              <div className="workshop-hero-scholarship-pill">
+                <span className="pill-badge">{tuition.discountPriceLabel}</span>
+                <span className="pill-price">{tuition.discountPrice}</span>
+                <del className="pill-orig">{tuition.originalPrice}</del>
+                <span className="pill-sep">·</span>
+                <span className="pill-scholarship">{tuition.scholarshipSupport}</span>
+              </div>
+            )}
 
             {/* Facts bar phong cách Coco */}
             {stats.length > 0 && (
@@ -204,8 +274,8 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
               <a href="#register" className="button-primary">
                 {t.ctaRegister}
               </a>
-              <a href="#curriculum" className="button-secondary">
-                {t.curriculumTitle}
+              <a href="#tuition" className="button-secondary">
+                {tuition?.title ?? t.curriculumTitle}
               </a>
             </div>
           </div>
@@ -221,8 +291,8 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
                 unoptimized
               />
               <div className="workshop-speaker-pill">
-                <span className="speaker-name">VU LEE × HOÀ NGUYỄN</span>
-                <span className="speaker-role">Nhà diễn giả Vũ Lee · Khách mời Hòa Nguyễn</span>
+                <span className="speaker-name">VŨ LEE · AI FILM DIRECTOR</span>
+                <span className="speaker-role">Triệu Hỷ Media × Vũ Lee · Đồng hành dự án Coco Drama</span>
               </div>
             </figure>
           </div>
@@ -368,12 +438,117 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
                 </div>
               </div>
               <p className="genres-note">
-                💡 <strong>{i18n.philosophyPrefix}</strong> {t.cocoPhilosophy ?? ""}
+                <strong>{i18n.philosophyPrefix}</strong> {t.cocoPhilosophy ?? ""}
               </p>
             </div>
           )}
         </div>
       </section>
+
+      {/* Học Phí & Học Bổng Coco Drama Section */}
+      {tuition && (
+        <section className="section-space rule" id="tuition">
+          <div className="site-container">
+            <div className="section-heading-row">
+              <div>
+                <span className="eyebrow">{i18n.pricingEyebrow}</span>
+                <h2 className="section-title">{i18n.pricingTitle}</h2>
+              </div>
+              <p>{i18n.pricingIntro}</p>
+            </div>
+
+            <div className="workshop-pricing-grid" style={{ marginTop: "40px" }}>
+              {/* Thẻ học phí chính */}
+              <div className="workshop-pricing-card">
+                <div className="pricing-card-header">
+                  <div>
+                    <span className="pricing-badge-soft">{t.courseSubtitle ?? "Khóa học thực chiến"}</span>
+                    <h3 className="pricing-card-name">{t.title}</h3>
+                  </div>
+                  <div className="pricing-discount-tag">
+                    <span>{tuition.discountPriceLabel}</span>
+                  </div>
+                </div>
+
+                <div className="pricing-figure-block">
+                  <div className="pricing-current-row">
+                    <strong className="pricing-current-amount">{tuition.discountPrice}</strong>
+                    <del className="pricing-original-amount">{tuition.originalPrice}</del>
+                  </div>
+                  <p className="pricing-save-caption">{i18n.saveNote}</p>
+                </div>
+
+                <div className="pricing-meta-row">
+                  <div className="pricing-meta-col">
+                    <span className="meta-icon-text">{tuition.durationLabel}</span>
+                    <strong className="meta-value">{tuition.duration}</strong>
+                  </div>
+                  <div className="pricing-meta-col">
+                    <span className="meta-icon-text">{tuition.locationLabel}</span>
+                    <strong className="meta-value">{tuition.location}</strong>
+                  </div>
+                </div>
+
+                <div className="pricing-outcomes-block">
+                  <h4 className="pricing-outcomes-heading">{tuition.outcomesTitle}</h4>
+                  <ul className="pricing-outcomes-list">
+                    {tuition.outcomes.map((item, idx) => (
+                      <li key={idx}>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pricing-card-action">
+                  <a href="#register" className="button-primary pricing-action-btn">
+                    {tuition.cta}
+                  </a>
+                </div>
+              </div>
+
+              {/* Thẻ học bổng Coco Drama Scholarship */}
+              <div className="workshop-scholarship-card">
+                <div className="scholarship-card-header">
+                  <span className="scholarship-pill">COCO DRAMA SCHOLARSHIP</span>
+                  <h3 className="scholarship-title">{tuition.scholarshipTitle}</h3>
+                </div>
+
+                <div className="scholarship-benefit-badge">
+                  <span className="scholarship-benefit-label">{i18n.scholarshipLevelLabel}</span>
+                  <strong className="scholarship-benefit-val">{tuition.scholarshipSupport}</strong>
+                </div>
+
+                <p className="scholarship-desc">{tuition.scholarshipNote}</p>
+
+                <div className="scholarship-features-list">
+                  <div className="scholarship-feature-item">
+                    <span className="scholarship-perk-index">01</span>
+                    <div>
+                      <strong>{i18n.scholarshipPerk1Title}</strong>
+                      <p>{i18n.scholarshipPerk1Desc}</p>
+                    </div>
+                  </div>
+                  <div className="scholarship-feature-item">
+                    <span className="scholarship-perk-index">02</span>
+                    <div>
+                      <strong>{i18n.scholarshipPerk2Title}</strong>
+                      <p>{i18n.scholarshipPerk2Desc}</p>
+                    </div>
+                  </div>
+                  <div className="scholarship-feature-item">
+                    <span className="scholarship-perk-index">03</span>
+                    <div>
+                      <strong>{i18n.scholarshipPerk3Title}</strong>
+                      <p>{i18n.scholarshipPerk3Desc}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Địa điểm & Thông tin Đào tạo */}
       <section className="section-space rule">
@@ -387,13 +562,13 @@ export default async function WorkshopPage({ params }: { params: Promise<{ local
               {venues.map((v, i) => (
                 <div key={i} className="venue-item-box">
                   <strong>{v.name}</strong>
-                  <p>📍 {v.address}</p>
+                  <p>{v.address}</p>
                 </div>
               ))}
               <div className="venue-item-box">
                 <strong>{i18n.hotlineLabel}</strong>
                 <p className="hotline-highlight">
-                  📞 <a href="tel:0961499943">0961 499 943</a>
+                  <a href="tel:0961499943">0961 499 943</a>
                 </p>
               </div>
             </div>

@@ -59,19 +59,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
         <div className="site-container garden-gallery">
-          <figure className="garden-photo garden-photo--main" data-tilt>
+          <figure className="garden-photo garden-photo--main" data-tilt data-reveal>
             <Image src="/hy-garden/trieu-hy-office.jpg" alt={t.home.hyGarden.labels[0]} width={1448} height={1086} unoptimized />
             <figcaption>{t.home.hyGarden.labels[0]}</figcaption>
           </figure>
-          <figure className="garden-photo" data-tilt>
+          <figure className="garden-photo" data-tilt data-reveal>
             <Image src="/hy-garden/coffee-workspace.jpg" alt={t.home.hyGarden.labels[1]} width={1448} height={1086} unoptimized />
             <figcaption>{t.home.hyGarden.labels[1]}</figcaption>
           </figure>
-          <figure className="garden-photo" data-tilt>
+          <figure className="garden-photo" data-tilt data-reveal>
             <Image src="/hy-garden/front-yard.jpg" alt={t.home.hyGarden.labels[2]} width={1448} height={1086} unoptimized />
             <figcaption>{t.home.hyGarden.labels[2]}</figcaption>
           </figure>
-          <figure className="garden-photo" data-tilt>
+          <figure className="garden-photo" data-tilt data-reveal>
             <Image src="/hy-garden/upstairs-workspace.jpg" alt={t.home.hyGarden.labels[3]} width={1448} height={1086} unoptimized />
             <figcaption>{t.home.hyGarden.labels[3]}</figcaption>
           </figure>
@@ -104,50 +104,40 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div>
             <span className="eyebrow">{t.workshopPage.eyebrow}</span>
             <div className="workshop-brand-line">
-              <span>{t.workshopPage.collaboration ?? "VU LEE × TRIỆU HỶ | COCO DRAMA"}</span>
+              <span>{t.workshopPage.collaboration ?? "TRIỆU HỶ MEDIA × VŨ LEE | COCO DRAMA"}</span>
             </div>
             <h2 className="section-title">{t.workshopPage.title}</h2>
+            {"courseSubtitle" in t.workshopPage && (
+              <p className="workshop-preview-subtitle">{t.workshopPage.courseSubtitle}</p>
+            )}
           </div>
           <div>
             <p className="body-large">{t.workshopPage.headline}</p>
             <p className="workshop-preview-desc">{t.workshopPage.description}</p>
+            {"tuition" in t.workshopPage && (
+              <div className="workshop-hero-scholarship-pill" style={{ marginBottom: "20px" }}>
+                <span className="pill-badge">{t.workshopPage.tuition.discountPriceLabel}</span>
+                <span className="pill-price">{t.workshopPage.tuition.discountPrice}</span>
+                <del className="pill-orig">{t.workshopPage.tuition.originalPrice}</del>
+                <span className="pill-sep">·</span>
+                <span className="pill-scholarship">{t.workshopPage.tuition.scholarshipSupport}</span>
+              </div>
+            )}
             <ul className="workshop-fact-list">
               <li>15 Buổi thực chiến</li>
-              <li>4 Giai đoạn</li>
-              <li>3 Bài thực hành</li>
-              <li>Cam kết đầu ra Coco Drama</li>
+              <li>Đạo diễn Vũ Lee giảng dạy</li>
+              <li>Học bổng Coco Drama 7 triệu</li>
+              <li>Hoàn thiện 01 phim AI & Portfolio</li>
             </ul>
             <div className="workshop-preview-actions">
               <Link href={`/${locale}/workshop`} className="button-primary">
                 {t.workshopPage.ctaRegister}
               </Link>
-              <Link href={`/${locale}/workshop#curriculum`} className="button-secondary">
-                {t.workshopPage.curriculumTitle}
+              <Link href={`/${locale}/workshop#tuition`} className="button-secondary">
+                {t.workshopPage.tuition.title}
               </Link>
             </div>
           </div>
-        </div>
-        <div className="site-container workshop-preview-gallery" style={{ marginTop: "40px" }}>
-          <figure className="garden-photo garden-photo--main" data-tilt>
-            <Image
-              src="/workshop/vulee-speaker.jpg"
-              alt="Giảng viên Vu Lee — AI Film Director"
-              width={1200}
-              height={800}
-              unoptimized
-            />
-            <figcaption>Diễn giả Vu Lee — AI Film Director chia sẻ tại Hội thảo</figcaption>
-          </figure>
-          <figure className="garden-photo" data-tilt>
-            <Image
-              src="/workshop/workshop-attendees.jpg"
-              alt="Khán phòng hội thảo AI Film Production"
-              width={1000}
-              height={667}
-              unoptimized
-            />
-            <figcaption>Khán phòng hội thảo và đội ngũ chuyên gia sản xuất</figcaption>
-          </figure>
         </div>
       </section>
 
@@ -159,7 +149,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <p className="home-about-detail">{t.home.overviewDetail}</p>
           </div>
         </div>
-        <figure className="site-container home-about-image" data-tilt>
+        <figure className="site-container home-about-image" data-tilt data-reveal>
           <Image src="/hy-garden/trieu-hy-office.jpg" alt={t.home.overviewImage} width={1448} height={1086} unoptimized />
           <figcaption>{t.home.overviewImage}</figcaption>
         </figure>

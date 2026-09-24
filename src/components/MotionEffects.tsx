@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export function MotionEffects() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const selector = [
@@ -14,6 +17,7 @@ export function MotionEffects() {
       ".section-heading-row > *",
       ".service-row",
       ".approach-list > li",
+      ".approach-content > h2",
       ".principles-grid > *",
       ".company-row",
       ".cocodrama-preview-copy",
@@ -92,7 +96,7 @@ export function MotionEffects() {
       observer.disconnect();
       cleanups.forEach((cleanup) => cleanup());
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }
