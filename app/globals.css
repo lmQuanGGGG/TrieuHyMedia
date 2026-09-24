@@ -4120,6 +4120,8 @@ details p {
   --career-cream: #f5f0e6;
   --career-orange: #c6572b;
   --career-sage: #aab79a;
+  --career-red: #b23f35;
+  --career-navy: #0e2338;
   color: var(--career-green);
   background: var(--career-cream);
 }
@@ -4157,6 +4159,11 @@ details p {
 }
 
 .careers-title span + span { color: var(--career-orange); }
+.locale--vi .careers-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -.025em;
+  font-weight: 700;
+}
 .locale--zh .careers-title, .locale--ko .careers-title {
   letter-spacing: .02em;
   line-height: 1.08;
@@ -4218,7 +4225,10 @@ details p {
 .careers-visual-top .eyebrow::before { background: var(--career-orange); }
 .careers-visual-top .section-title { max-width: 720px; margin-top: 20px; color: var(--career-green); font-family: inherit; font-size: clamp(2rem, 3.6vw, 3.5rem); font-weight: 620; letter-spacing: -.04em; line-height: 1.05; }
 .careers-visual-top > p { margin: 0 0 5px; color: #46544b; line-height: 1.7; }
-.careers-palette { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(15px, 2.4vw, 32px); margin-top: 52px; }
+.careers-palette { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(14px, 1.8vw, 28px); margin-top: 52px; }
+@media (max-width: 1080px) {
+  .careers-palette { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 .careers-swatch-color { aspect-ratio: 1.9; margin-bottom: 14px; }
 .careers-swatch-index { color: #69746a; font-size: .66rem; letter-spacing: .11em; }
 .careers-swatch h3 { margin: 8px 0 3px; color: var(--career-green); font-size: 1rem; font-weight: 650; }
