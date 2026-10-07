@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { WorkshopRecap } from "@/src/components/news/WorkshopRecap";
+import { workshopRecap } from "@/src/content/workshopRecap";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -20,9 +22,9 @@ const copy = {
     lionTitle: "Sắc màu múa lân, niềm vui kết nối",
     lionCopy: "Tiếng trống rộn ràng, sắc vàng và hồng nổi bật giữa khu vườn. Những khoảnh khắc biểu diễn và mọi người cùng dõi theo mang không khí lễ hội đến Hỷ Garden — một lát cắt cộng đồng bên cạnh câu chuyện sáng tạo.",
     lionAlt: "Đội múa lân biểu diễn trong không khí lễ hội tại Hỷ Garden",
-    nextLabel: "Workshop tiếp theo",
+    nextLabel: "Khám phá workshop",
     nextTitle: "Cùng bắt đầu câu chuyện của bạn",
-    nextCopy: "AI Short Drama Making Workshop · 15:00, Chủ nhật 27.9 · Hỷ Garden, 15 Trung Lương 16, Đà Nẵng.",
+    nextCopy: "Tìm hiểu AI Short Drama Making Workshop và hành trình từ ý tưởng đến câu chuyện được kể bằng AI.",
     cta: "Tìm hiểu workshop",
   },
   en: {
@@ -38,9 +40,9 @@ const copy = {
     lionTitle: "Lion dance, shared celebration",
     lionCopy: "Drums set the rhythm as vivid yellow and pink lions fill the garden. Performers and guests share the moment, bringing a festive note to Hy Garden alongside its creative workshops.",
     lionAlt: "Lion dancers performing for guests in a festive garden setting",
-    nextLabel: "Coming up next",
+    nextLabel: "Explore the workshop",
     nextTitle: "Start shaping your story",
-    nextCopy: "AI Short Drama Making Workshop · 3:00 PM, Sunday, September 27 · Hy Garden, 15 Trung Luong 16, Da Nang.",
+    nextCopy: "Explore the AI Short Drama Making Workshop and the journey from an idea to a story told with AI.",
     cta: "Explore the workshop",
   },
   zh: {
@@ -56,9 +58,9 @@ const copy = {
     lionTitle: "舞狮欢腾，共享喜悦",
     lionCopy: "鼓声响起，明亮的黄色与粉色舞狮为花园增添节日气氛。表演者与来宾共同感受这一刻，也为 Hỷ Garden 的创意活动增添了一段社区记忆。",
     lionAlt: "舞狮队在花园为来宾带来节庆表演",
-    nextLabel: "下一场工作坊",
+    nextLabel: "探索工作坊",
     nextTitle: "一起开始你的故事",
-    nextCopy: "AI 短剧创作工作坊 · 9月27日星期日 15:00 · 岘港 15 Trung Lương 16 Hỷ Garden。",
+    nextCopy: "了解 AI 短剧创作工作坊，探索从灵感到 AI 故事的创作过程。",
     cta: "了解工作坊",
   },
   ko: {
@@ -74,9 +76,9 @@ const copy = {
     lionTitle: "사자춤으로 함께한 축제의 순간",
     lionCopy: "북소리와 함께 노란색과 분홍색 사자춤이 정원을 채웁니다. 공연자와 손님이 함께 즐긴 순간은 Hỷ Garden의 창작 워크숍 곁에 축제의 기억을 더했습니다.",
     lionAlt: "정원에서 손님들을 위해 공연하는 사자춤 팀",
-    nextLabel: "다음 워크숍",
+    nextLabel: "워크숍 둘러보기",
     nextTitle: "함께 당신의 이야기를 시작해요",
-    nextCopy: "AI 숏드라마 제작 워크숍 · 9월 27일 일요일 오후 3시 · 다낭 15 Trung Luong 16 Hỷ Garden.",
+    nextCopy: "AI 숏드라마 제작 워크숍과 아이디어를 AI 이야기로 만드는 과정을 알아보세요.",
     cta: "워크숍 알아보기",
   },
 } as const;
@@ -85,7 +87,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const t = copy[locale];
-  return pageMetadata(locale, "/news", `${t.pageTitle} | ${company.brandName}`, t.lead);
+  return pageMetadata(locale, "/news", `${t.pageTitle} | ${company.brandName}`, workshopRecap[locale].lead);
 }
 
 export default async function NewsPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -95,16 +97,18 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
 
   return (
     <div className="news-page">
+      <WorkshopRecap locale={locale} />
+      <div className="site-container news-archive-label"><span className="eyebrow">{workshopRecap[locale].archive}</span></div>
       <section className="page-hero page-hero--visual news-hero">
         <div className="site-container page-hero-grid news-hero-grid">
           <div>
             <span className="eyebrow">{t.eyebrow}</span>
-            <h1 className="page-title news-title">{t.title}</h1>
+            <h2 className="page-title news-title">{t.title}</h2>
             <p className="body-large page-intro">{t.lead}</p>
           </div>
           <aside className="news-hero-stack" aria-label={t.photoAlt}>
             <figure className="page-hero-media news-hero-photo" data-reveal>
-              <Image src="/news/ai-workshop-session.jpg" alt={t.photoAlt} width={940} height={1660} priority unoptimized />
+              <Image src="/news/ai-workshop-session.jpg" alt={t.photoAlt} width={940} height={1660} unoptimized />
             </figure>
           </aside>
         </div>
