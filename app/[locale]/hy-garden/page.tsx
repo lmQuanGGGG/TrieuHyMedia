@@ -111,6 +111,6 @@ export default async function HyGardenPage({ params }: { params: Promise<{ local
     </section>
     <section className="hy-menu section-space" id="menu"><div className="site-container"><div className="hy-menu-intro"><span className="eyebrow">{t.menu}</span><h2>{t.menuIntro}</h2></div><div className="hy-menu-grid">{menu.map((group) => <section className="hy-menu-group" key={group.id}><h3>{translate(group.title)}</h3><ul>{group.items.map((item, index) => <li key={item.code}><MenuCard code={item.code} name={translate(item.name)} price={item.price} image={menuImages[item.code]} index={index} /></li>)}</ul></section>)}</div><p className="hy-menu-note">{t.note}</p></div></section>
     <OrderWebview locale={locale} />
-    <section className="hy-visit"><div className="site-container hy-visit-inner"><div><span className="eyebrow">Hỷ Garden</span><h2>Where ideas bloom.</h2></div><div className="hy-visit-details"><p>{t.address}<br />{t.hours}</p><a href="tel:0399219143">0399 219 143</a><Link href={`/${locale}/contact`}>{t.contact} <span aria-hidden="true">↗</span></Link></div></div></section>
+    <section className="hy-visit"><div className="site-container hy-visit-inner"><div><span className="eyebrow">Hỷ Garden</span><h2>Where ideas bloom</h2></div><div className="hy-visit-details"><p>{t.address}<br />{t.hours}</p><a href="tel:0399219143">0399 219 143</a><Link href={`/${locale}/contact`}>{t.contact} <span aria-hidden="true">↗</span></Link></div></div></section>
   </>;
 }
