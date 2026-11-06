@@ -92,8 +92,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <Link className="button-primary cocodrama-button" href={`/${locale}/cocodrama`}>{t.home.cocodrama.cta}</Link>
           </div>
           <div className="cocodrama-phone-stage" aria-hidden="true">
-            <div className="cocodrama-phone cocodrama-phone--back"><Image src="/cocodrama/popular-ranking.png" alt="" width={750} height={1624} unoptimized /></div>
-            <div className="cocodrama-phone cocodrama-phone--front"><Image src="/cocodrama/recommend-grid.png" alt="" width={750} height={1624} unoptimized /></div>
+            <div className="cocodrama-phone cocodrama-phone--back"><Image src="/cocodrama/app-popular.png" alt="" width={1206} height={2622} unoptimized /></div>
+            <div className="cocodrama-phone cocodrama-phone--front"><Image src="/cocodrama/app-home.png" alt="" width={1206} height={2622} unoptimized /></div>
           </div>
         </div>
       </section>

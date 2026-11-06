@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     "/cocodrama",
     locale === "en" ? "CocoDrama | Short-Form Streaming by TRIEU HY MEDIA" : locale === "zh" ? "CocoDrama | TRIEU HY MEDIA 短剧应用" : locale === "ko" ? "CocoDrama | TRIEU HY MEDIA의 숏폼 스트리밍" : "CocoDrama | Ứng dụng phim ngắn của TRIEU HY MEDIA",
     locale === "en"
-      ? "CocoDrama is a localized short-form streaming application for Vietnam, Thailand, Indonesia and Malaysia."
-      : locale === "zh" ? "CocoDrama 是一款面向越南、泰国、印度尼西亚和马来西亚进行本地化的短剧应用。" : locale === "ko" ? "CocoDrama는 베트남, 태국, 인도네시아, 말레이시아를 위해 현지화한 숏폼 드라마 애플리케이션입니다." : "CocoDrama là ứng dụng phim ngắn được bản địa hóa cho Việt Nam, Thái Lan, Indonesia và Malaysia.",
+      ? "CocoDrama is a localized short-form streaming application for Vietnam, Thailand, Indonesia, Malaysia and Singapore."
+      : locale === "zh" ? "CocoDrama 是一款面向越南、泰国、印度尼西亚、马来西亚和新加坡进行本地化的短剧应用。" : locale === "ko" ? "CocoDrama는 베트남, 태국, 인도네시아, 말레이시아, 싱가포르를 위해 현지화한 숏폼 드라마 애플리케이션입니다." : "CocoDrama là ứng dụng phim ngắn được bản địa hóa cho Việt Nam, Thái Lan, Indonesia, Malaysia và Singapore.",
   );
 }
 
@@ -41,9 +41,45 @@ export default async function CocodramaPage({ params }: { params: Promise<{ loca
             <ul className="coco-hero-facts">{t.heroFacts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
           </div>
           <div className="coco-device-scene" aria-label={t.imageLabels[1]} role="img" tabIndex={0}>
-            <div className="coco-device coco-device--left"><Image src="/cocodrama/popular-ranking.png" alt={t.imageLabels[2]} width={750} height={1624} priority unoptimized /></div>
-            <div className="coco-device coco-device--center"><Image src="/cocodrama/recommend-grid.png" alt={t.imageLabels[1]} width={750} height={1624} priority unoptimized /></div>
-            <div className="coco-device coco-device--right"><Image src="/cocodrama/player-settings.png" alt={t.imageLabels[3]} width={375} height={812} priority unoptimized /></div>
+            <div className="coco-device coco-device--left"><Image src="/cocodrama/app-popular.png" alt={t.imageLabels[2]} width={1206} height={2622} priority unoptimized /></div>
+            <div className="coco-device coco-device--center"><Image src="/cocodrama/app-home.png" alt={t.imageLabels[1]} width={1206} height={2622} priority unoptimized /></div>
+            <div className="coco-device coco-device--right"><Image src="/cocodrama/app-explore.png" alt={t.imageLabels[3]} width={1206} height={2622} priority unoptimized /></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="coco-download" aria-labelledby="coco-download-title">
+        <div className="site-container coco-download-grid">
+          <div className="coco-download-heading">
+            <span className="eyebrow">COCODRAMA</span>
+            <h2 id="coco-download-title">{t.downloadTitle}</h2>
+            <p>{t.downloadIntro}</p>
+          </div>
+          <div className="coco-download-options">
+            <article className="coco-download-card">
+              <div className="coco-download-copy">
+                <span className="coco-download-platform">Android</span>
+                <h3>{t.googlePlay}</h3>
+                <a href="https://play.google.com/store/apps/details?id=com.cocodrama.shorts.www&pli=1" className="button-primary" target="_blank" rel="noreferrer">{t.downloadApp}</a>
+              </div>
+              <Image src="/cocodrama/google-play-qr.png" alt={t.googleQrAlt} width={320} height={320} />
+            </article>
+            <article className="coco-download-card">
+              <div className="coco-download-copy">
+                <span className="coco-download-platform">Web</span>
+                <h3>{t.webApp}</h3>
+                <a href="https://cocodrama.trieuhymedia.net/#/https://play.google.com/store/apps/details?id=com.cocodrama.shorts.www&pcampaignid=web_share" className="button-primary" target="_blank" rel="noreferrer">{t.openWeb}</a>
+              </div>
+              <Image src="/cocodrama/web-qr.png" alt={t.webQrAlt} width={320} height={320} />
+            </article>
+            <article className="coco-download-card coco-download-card--apple">
+              <div className="coco-download-copy">
+                <span className="coco-download-platform">iOS</span>
+                <h3>{t.appleStore}</h3>
+                <span className="coco-coming-soon" aria-label={t.comingSoon}>{t.comingSoon}</span>
+              </div>
+              <span className="coco-apple-mark" aria-hidden="true"></span>
+            </article>
           </div>
         </div>
       </section>
@@ -79,8 +115,8 @@ export default async function CocodramaPage({ params }: { params: Promise<{ loca
           <div className="section-heading-row"><div><h2 className="section-title">{t.productTitle}</h2></div><p>{t.productIntro}</p></div>
           <div className="coco-product-gallery">
             <figure className="coco-web-shot" data-tilt><Image src="/cocodrama/web-experience.jpg" alt={t.imageLabels[0]} width={844} height={1500} unoptimized /></figure>
-            <figure className="coco-mobile-shot" data-tilt><Image src="/cocodrama/recommend-grid.png" alt={t.imageLabels[1]} width={750} height={1624} unoptimized /></figure>
-            <figure className="coco-mobile-shot" data-tilt><Image src="/cocodrama/player-settings.png" alt={t.imageLabels[3]} width={375} height={812} unoptimized /></figure>
+            <figure className="coco-mobile-shot" data-tilt><Image src="/cocodrama/app-home.png" alt={t.imageLabels[1]} width={1206} height={2622} unoptimized /></figure>
+            <figure className="coco-mobile-shot" data-tilt><Image src="/cocodrama/app-profile.png" alt={t.imageLabels[4]} width={1206} height={2622} unoptimized /></figure>
           </div>
         </div>
       </section>

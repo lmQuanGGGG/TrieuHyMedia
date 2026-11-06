@@ -1689,6 +1689,126 @@ details p {
   background: #0d0908;
 }
 
+.coco-download {
+  padding-block: clamp(64px, 8vw, 104px);
+  color: #fff8f1;
+  background: #171211;
+}
+
+.coco-download-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.8fr);
+  align-items: start;
+  gap: clamp(36px, 6vw, 84px);
+}
+
+.coco-download-heading .eyebrow {
+  color: #e2a67b;
+}
+
+.coco-download-heading h2 {
+  max-width: 420px;
+  margin: 24px 0 0;
+  font-size: clamp(2rem, 3vw, 3.3rem);
+  font-weight: 520;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+.coco-download-heading p {
+  max-width: 390px;
+  margin: 22px 0 0;
+  color: #bcb2ad;
+  line-height: 1.7;
+}
+
+.coco-download-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.coco-download-card {
+  display: flex;
+  min-height: 188px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 22px;
+  color: #201817;
+  background: #fff8f1;
+  border-radius: 18px;
+}
+
+.coco-download-copy {
+  min-width: 0;
+}
+
+.coco-download-platform {
+  color: #806b61;
+  font-size: 0.74rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.coco-download-card h3 {
+  margin: 9px 0 18px;
+  font-size: 1.2rem;
+  font-weight: 590;
+  line-height: 1.2;
+}
+
+.coco-download-card .button-primary {
+  min-height: 42px;
+  padding-inline: 16px;
+  color: #fff;
+  background: #201817;
+  border-color: #201817;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.coco-download-card .button-primary:hover {
+  background: #4e3530;
+}
+
+.coco-download-card img {
+  flex: 0 0 92px;
+  width: 92px;
+  height: 92px;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #e8dfd7;
+  border-radius: 10px;
+}
+
+.coco-download-card--apple {
+  color: #f9f1eb;
+  background: #342825;
+}
+
+.coco-download-card--apple .coco-download-platform {
+  color: #d0bdb2;
+}
+
+.coco-download-card--apple h3 {
+  margin-bottom: 12px;
+}
+
+.coco-coming-soon {
+  display: inline-block;
+  color: #e2a67b;
+  font-size: 0.92rem;
+  font-weight: 620;
+}
+
+.coco-apple-mark {
+  align-self: flex-start;
+  color: #f9f1eb;
+  font-size: 1.7rem;
+}
+
 .coco-orb {
   top: -170px;
   left: 17%;
@@ -2224,6 +2344,11 @@ details p {
     grid-template-columns: 1fr;
   }
 
+  .coco-download-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
   .cocodrama-phone-stage {
     min-height: 690px;
   }
@@ -2415,6 +2540,14 @@ details p {
   .coco-hero-facts {
     display: grid;
     gap: 13px;
+  }
+
+  .coco-download-options {
+    grid-template-columns: 1fr;
+  }
+
+  .coco-download-card {
+    min-height: 150px;
   }
 
   .coco-hero-facts li,

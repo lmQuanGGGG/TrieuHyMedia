@@ -82,7 +82,7 @@ const koContent = {
     eyebrow: "기업 공식 웹사이트", headline: "명확한 생각에서 출발하는 창의적 광고", intro: `${company.legalNameEn}는 베트남 다낭에 기반을 둔 합법 등록 광고 회사입니다. 명확한 커뮤니케이션 전략과 창의적인 콘텐츠, 실용적인 광고 솔루션으로 기업을 지원합니다.`, explore: "서비스 살펴보기",
     overviewTitle: "TRIEU HY MEDIA 소개", overview: `${company.legalNameEn}는 ${company.registrationDateEn}에 등록되어 베트남 다낭 호아쑤언 지역에 본사를 두고 있습니다. 광고 분야에서 명확함, 책임감, 전문성을 바탕으로 활동합니다.`, overviewDetail: "회사 오피스, Hy Garden 커피 워크스페이스, CocoDrama와 같은 디지털 제품 개발을 한 공간에 연결해 집중적인 업무와 창의적인 대화를 지원합니다.", overviewImage: "TRIEU HY MEDIA 업무 공간", learnMore: "회사 더 알아보기",
     hyGarden: { eyebrow: "업무 환경", title: "Hỷ Garden — 오피스와 커피 공간", description: "Hỷ Garden은 TRIEU HY MEDIA의 업무 공간과 커피숍이 함께 있는 곳입니다. 집중 업무, 팀 대화, 커피를 곁들인 만남을 위한 편안한 환경을 제공합니다.", note: "일과 소통, 일상의 연결이 자연스럽게 이어지는 실용적인 공간입니다.", cta: "Hỷ Garden 둘러보기", labels: ["TRIEU HY MEDIA 오피스", "커피 워크스페이스", "가든 환경", "상층 업무 공간"] },
-    cocodrama: { eyebrow: "디지털 제품", title: "CocoDrama, 동남아 4개 시장을 위한 현지화 숏폼 스토리", description: "정식 라이선스 콘텐츠, 5개 언어 현지화, 구독 또는 광고 기반 에피소드 이용 방식을 제공합니다.", cta: "CocoDrama 살펴보기" },
+    cocodrama: { eyebrow: "디지털 제품", title: "CocoDrama, 동남아 5개 시장을 위한 현지화 숏폼 스토리", description: "정식 라이선스 콘텐츠, 5개 언어 현지화, 구독 또는 광고 기반 에피소드 이용 방식을 제공합니다.", cta: "CocoDrama 살펴보기" },
     servicesTitle: "광고 및 커뮤니케이션 서비스", servicesIntro: "명확한 방향, 일관된 커뮤니케이션, 실용적인 크리에이티브 실행이 필요한 기업을 위한 집중 지원입니다.", approachTitle: "일하는 방식", approach: [["이해", "비즈니스 환경, 목표, 커뮤니케이션 요구를 먼저 듣습니다."], ["계획", "실용적인 방향과 우선순위, 명확한 업무 범위를 정합니다."], ["제작", "합의된 방향에 맞춰 콘텐츠와 자료를 제작합니다."], ["실행", "신중하게 진행을 조율하고 명확히 공유합니다."], ["검토", "결과와 피드백을 확인하고 필요한 부분을 다듬습니다."]], principlesTitle: "업무 원칙", principles: ["명확성", "책임감", "일관성", "창의성", "전문성"], companyTitle: "회사 정보", ctaTitle: "더 명확한 커뮤니케이션을 시작하세요", ctaText: "광고 및 기업 커뮤니케이션 문의는 TRIEU HY MEDIA로 연락해 주세요.", cta: "팀에 문의하기",
   },
   about: { eyebrow: "회사 소개", title: "명확함과 책임감으로 만드는 기업 커뮤니케이션", intro: `${company.legalNameEn}는 베트남 다낭에 본사를 둔 합법 등록 기업입니다. ${company.registrationDateEn}에 사업자 번호 ${company.businessId}로 등록되었습니다.`, sections: [["법적 설립", "회사는 정상 운영 중인 비국영 유한책임회사이며, 등록 사무소는 베트남 다낭 호아쑤언에 있습니다."], ["주요 사업", "회사의 주요 등록 사업은 광고이며, 기업을 위한 실용적인 광고 및 커뮤니케이션 지원에 집중합니다."], ["미션", "실용적인 광고와 커뮤니케이션 솔루션을 통해 기업이 메시지를 전문적으로 전달하도록 돕습니다."], ["업무 원칙", "모든 프로젝트를 명확성, 책임감, 일관성 그리고 고객 목표에 대한 존중으로 대합니다."]], companyTitle: "공식 회사 정보", contactTitle: "연락처" },
@@ -232,7 +232,7 @@ const zhContent = {
     },
     cocodrama: {
       eyebrow: "数字产品",
-      title: "CocoDrama 将本地化短剧带到四个东南亚市场",
+      title: "CocoDrama 将本地化短剧带到五个东南亚市场",
       description: "正版影视内容、五种本地化语言，以及通过订阅或广告解锁剧集的灵活观看方式。",
       cta: "探索 CocoDrama",
     },
@@ -460,7 +460,7 @@ export const content = {
       },
       cocodrama: {
         eyebrow: "Digital product",
-        title: "CocoDrama brings localized short-form stories to four Southeast Asian markets",
+        title: "CocoDrama brings localized short-form stories to five Southeast Asian markets",
         description: "Licensed film content, five localization languages and flexible access through subscriptions or advertising-supported episode unlocks.",
         cta: "Explore CocoDrama",
       },
@@ -686,7 +686,7 @@ export const content = {
       },
       cocodrama: {
         eyebrow: "Sản phẩm số",
-        title: "CocoDrama đưa phim ngắn được bản địa hóa đến bốn thị trường Đông Nam Á",
+        title: "CocoDrama đưa phim ngắn được bản địa hóa đến năm thị trường Đông Nam Á",
         description: "Nội dung phim có bản quyền, năm ngôn ngữ bản địa hóa và quyền truy cập linh hoạt qua gói dịch vụ hoặc hình thức mở tập bằng quảng cáo.",
         cta: "Khám phá CocoDrama",
       },
